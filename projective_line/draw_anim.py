@@ -29,7 +29,7 @@ def draw(t: int):
     plt.cla()
     plt.title(f"Projective line: {t=}", fontsize=TITLE_FONT_SIZE)
     plt.xlabel("X", fontsize=LABEL_FONT_SIZE)
-    plt.xlabel("Y", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel("Y", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
