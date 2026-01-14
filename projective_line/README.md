@@ -14,7 +14,7 @@
 > ```
 > に以下の同値関係$`\sim`$
 > ```math
-> R^2 \setminus \{ (0,0) \} \ni (x_0,x_1) = \alpha (x_0',x_1') , \exist \alpha \neq 0 \iff (x_0,x_1) \sim (x_0',x_1')
+> R^2 \setminus \{ (0,0) \} \ni (x_0,x_1) = \alpha (x_0',x_1') , \alpha \neq 0 \iff (x_0,x_1) \sim (x_0',x_1')
 > ```
 > をいれた時の商集合$`R^2 / \sim`$
 > ```math
