@@ -18,7 +18,7 @@ FIGURE_SIZE = (10, 10)
 AXIS_MAX = 10
 TITLE_FONT_SIZE = 14
 LABEL_FONT_SIZE = 16
-FRAMES = 100
+N = 100
 fig = plt.figure(dpi=256)
 
 plt.axes().set_aspect("equal")
@@ -27,7 +27,7 @@ plt.axes().set_aspect("equal")
 def draw(t: int):
     print(f"plotting {t=} ...")
     plt.cla()
-    plt.title(f"Projective line: {t=}", fontsize=TITLE_FONT_SIZE)
+    plt.title(f"Projective line: {t=}, {N=}", fontsize=TITLE_FONT_SIZE)
     plt.xlabel("X", fontsize=LABEL_FONT_SIZE)
     plt.ylabel("Y", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
@@ -37,7 +37,7 @@ def draw(t: int):
     plt.xlim(-AXIS_MAX, AXIS_MAX)
     plt.ylim(-AXIS_MAX, AXIS_MAX)
 
-    delta = 2 * np.pi / FRAMES
+    delta = 2 * np.pi / N
     theta = t * delta
     L = 20
 
@@ -60,7 +60,7 @@ def draw(t: int):
     plt.plot(
         [-tmp_x, tmp_x],
         [-tmp_y, tmp_y],
-        label="Projective line",
+        label=r"Y=$\tan(\frac{2\pi}{N} t)X$",
         color=PJ_LINE_COLOR,
         linewidth=LINE_WIDTH,
     )
@@ -68,7 +68,7 @@ def draw(t: int):
     plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
-res = FuncAnimation(fig, draw, interval=100, frames=range(FRAMES))
+res = FuncAnimation(fig, draw, interval=100, frames=range(N))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
 res.save("projective_line_plot.gif", writer="imagemagick")
