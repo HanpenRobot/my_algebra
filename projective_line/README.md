@@ -1,6 +1,6 @@
 # draw projective_line
 ![./projective_line_plot.gif](./projective_line_plot.gif)射影直線と`X=1`, `Y=1`の交点を表示する`gif`
-[!NOTE]
+> [!NOTE]
 
 1次元射影直線$`RP^1`$の定義は以下である。
 ```math
@@ -20,7 +20,7 @@ RP^1 = R^2 / \sim
 ```
 である。
 
-[!IMPORTANT]
+> [!IMPORTANT]
 
 $`RP^1`$の要素は*座標*ではなく、*原点を通る直線*であることに注意 !
 ```math
