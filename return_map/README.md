@@ -1,5 +1,22 @@
 # draw_logistic_map
 - ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$の不動点の安定性をリターンマップを使って観察してみよう。
+
+> [!NOTE]
+> ```math
+> f(x) = \alpha x(1-x)
+> ```
+> とする。このとき、
+> ```math
+> A=f(A)
+> ```
+> を満たす点$`A`$をロジスティック写像の不動点とよぶ。
+> 初期値を$`x_{0}=A+\epsilon`$としたときに
+> ```math
+> \lim_{n \to \infty} x_{n}
+> ```
+> がどのような挙動をしめすか解析することを**不動点の安定性解析**とよぶ。
+
+
 ## ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$のリターンマップのアニメーション
 - $\alpha=1.5$の時は、安定不動点に収束する。
 ![./logistic_map_1.5.gif](./logistic_map_1.5.gif)
@@ -23,6 +40,6 @@
 ![./logistic_map_4.gif](./logistic_map_4.gif)
 
 ## ロジスティック写像の分岐図
-![./bifurcation.gif](./bifurcation.gif)
+![./bifurcation_diagram.gif](./bifurcation_diagram.gif)
 
 - 参考文献 改定増補 カオス力学の基礎 早間 慧 現代数学社 2002年 改訂第2版, p.5, pp.21-22
