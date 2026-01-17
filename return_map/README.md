@@ -2,8 +2,10 @@
 ## ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$のリターンマップのアニメーション
 - $\alpha=2.8$の時は、安定不動点に収束する。
 ![./logistic_map_2.8.gif](./logistic_map_2.8.gif)
-- $\alpha=3$の時は、周期的な値(周期=2)になる。
+- $\alpha=3$の時は、ゆっくりと安定不動点に収束する。($\alpha=3$ が唯一の解と周期が2の解との分岐点)
 ![./logistic_map_3.gif](./logistic_map_3.gif)
+- $\alpha=3.2$の時は、周期的な値(周期=2)になる。
+![./logistic_map_3.2.gif](./logistic_map_3.2.gif)
 - $\alpha=4$の時は、カオスになる。
 ![./logistic_map_4.gif](./logistic_map_4.gif)
 
