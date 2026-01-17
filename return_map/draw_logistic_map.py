@@ -23,10 +23,10 @@ LABEL_FONT_SIZE = 16
 # CONST_A = 2.8
 # FRAMES = 50
 # CONST_A = 4
-# FRAMES = 50
-# CONST_A = 3
-FRAMES = 10
-CONST_A = 3.2
+FRAMES = 100
+CONST_A = 3
+# FRAMES = 10
+# CONST_A = 3.2
 
 fig = plt.figure(dpi=256)
 
