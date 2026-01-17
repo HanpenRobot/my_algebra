@@ -19,13 +19,13 @@ AXIS_MAX = 1.0
 AXIS_MIN = 0.0
 TITLE_FONT_SIZE = 14
 LABEL_FONT_SIZE = 16
-# N = 20
+# FRAMES = 20
 # CONST_A = 2.8
-# N = 50
+# FRAMES = 50
 # CONST_A = 4
-# N = 50
+# FRAMES = 50
 # CONST_A = 3
-N = 10
+FRAMES = 10
 CONST_A = 3.2
 
 fig = plt.figure(dpi=256)
@@ -49,7 +49,7 @@ def draw_return_map(init_value: float, n: int, CONST_A: float):
         X = func(x=tmp_X, CONST_A=CONST_A)
         ansX.append(X)
     N_max = 200
-    tmp_arry = [x / N for x in range(N_max + 1)]
+    tmp_arry = [x / N_max for x in range(N_max + 1)]
     tmp_graph_Y = [func(x=x, CONST_A=CONST_A) for x in tmp_arry]
     plt.plot(  # plot logistic map
         tmp_arry,
@@ -107,7 +107,7 @@ def draw(n: int):
     plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
-res = FuncAnimation(fig, draw, interval=100, frames=range(N))
+res = FuncAnimation(fig, draw, interval=100, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
 res.save(f"logistic_map_{CONST_A}.gif", writer="imagemagick")
