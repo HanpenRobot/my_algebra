@@ -95,7 +95,7 @@ def draw(n: int):
         tmp_res_Y.append(item[1])
     # (CONST_A、x[n])にプロットする ( n > N_max*limit_const )
     plt.plot(tmp_res_X, tmp_res_Y, "o", ms=2, color=RT_LINE_COLOR)
-    plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
+    # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
 FRAMES = 30
