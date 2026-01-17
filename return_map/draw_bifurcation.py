@@ -53,6 +53,7 @@ def get_limit_value(init_value: float, CONST_A, N_max: int, limit_const: int):
 
 
 def draw(n: int):
+    n = 30
     print(f"plotting {n=} ...")
     N_max = 2000
     limit_const = 0.7
@@ -96,8 +97,8 @@ def draw(n: int):
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
-FRAMES = 30
+FRAMES = 1
 res = FuncAnimation(fig, draw, interval=50, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
-res.save(f"bifurcation.gif", writer="imagemagick")
+res.save(f"bifurcation_diagram.gif", writer="imagemagick")
