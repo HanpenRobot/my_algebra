@@ -1,4 +1,5 @@
 # draw_logistic_map
+- ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$の不動点の安定性をリターンマップを使って観察してみよう。
 ## ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$のリターンマップのアニメーション
 - $\alpha=1.5$の時は、安定不動点に収束する。
 ![./logistic_map_1.5.gif](./logistic_map_1.5.gif)
