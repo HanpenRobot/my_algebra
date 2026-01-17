@@ -1,5 +1,5 @@
 # draw draw_logistic_map
-## ロジスティック写像$x_{n+1} = \alpha x_n(1-x_n)$のリターンマップのアニメーション
+## ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$のリターンマップのアニメーション
 - $\alpha=2.8$の時は、安定不動点に収束する。
 ![./logistic_map_2.8.gif](./logistic_map_2.8.gif)
 - $\alpha=4$の時は、カオスになる。
