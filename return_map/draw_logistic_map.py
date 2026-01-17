@@ -29,9 +29,11 @@ LABEL_FONT_SIZE = 16
 # CONST_A = 3.2
 # FRAMES = 60
 # CONST_A = 3.5
-FRAMES = 30
-CONST_A = 1.5
-
+# FRAMES = 30
+# CONST_A = 1.5
+FRAMES = 20
+CONST_A = 3.2
+INIT_VALUE = 0.63
 fig = plt.figure(dpi=256)
 
 plt.axes().set_aspect("equal")
@@ -106,12 +108,11 @@ def draw(n: int):
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.xlim(0, AXIS_MAX)
     plt.ylim(0, AXIS_MAX)
-    init_value = 0.2
-    draw_return_map(init_value=init_value, n=n, CONST_A=CONST_A)
+    draw_return_map(init_value=INIT_VALUE, n=n, CONST_A=CONST_A)
     plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
 res = FuncAnimation(fig, draw, interval=100, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
-res.save(f"logistic_map_{CONST_A}.gif", writer="imagemagick")
+res.save(f"logistic_map_{CONST_A}_init_{INIT_VALUE}.gif", writer="imagemagick")

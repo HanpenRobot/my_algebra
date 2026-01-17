@@ -10,6 +10,12 @@
 ![./logistic_map_3.gif](./logistic_map_3.gif)
 - $\alpha=3.2$の時は、周期的な値(周期=2)になる。
 ![./logistic_map_3.2.gif](./logistic_map_3.2.gif)
+
+> [!IMPORTANT]
+> さらに$\alpha=3.2$の時は、不動点が** 不安定化 ** する。
+> ![./logistic_map_3.2_init_0.63.gif](./logistic_map_3.2_init_0.63.gif)
+
+
 - $\alpha=3.5$の時は、周期的な値(周期=4)になる。
 ![./logistic_map_3.5.gif](./logistic_map_3.5.gif)
 - $\alpha=4$の時は、カオスになる。
