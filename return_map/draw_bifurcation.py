@@ -15,9 +15,9 @@ GRID_LINE_WIDTH = 0.8
 
 
 FIGURE_SIZE = (10, 10)
-Y_AXIS_MAX = 1.5
+Y_AXIS_MAX = 1.2
 Y_AXIS_MIN = 0.0
-X_AXIS_MAX = 4.5
+X_AXIS_MAX = 4.2
 X_AXIS_MIN = 1.0
 
 TITLE_FONT_SIZE = 14
@@ -60,7 +60,7 @@ def draw(n: int):
     plt.xlabel(r"$\alpha$", fontsize=LABEL_FONT_SIZE)
     plt.ylabel(rf"$x_n$, $(n > {int(N_max * limit_const)})$", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
-
+    plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
