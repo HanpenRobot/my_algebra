@@ -6,6 +6,8 @@
 ![./logistic_map_3.gif](./logistic_map_3.gif)
 - $\alpha=3.2$の時は、周期的な値(周期=2)になる。
 ![./logistic_map_3.2.gif](./logistic_map_3.2.gif)
+- $\alpha=3.5$の時は、周期的な値(周期=4)になる。
+![./logistic_map_3.5.gif](./logistic_map_3.5.gif)
 - $\alpha=4$の時は、カオスになる。
 ![./logistic_map_4.gif](./logistic_map_4.gif)
 
