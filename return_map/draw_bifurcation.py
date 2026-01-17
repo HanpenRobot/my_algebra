@@ -26,7 +26,7 @@ LABEL_FONT_SIZE = 16
 
 fig = plt.figure(dpi=256)
 
-plt.axes().set_aspect("equal")
+# plt.axes().set_aspect("equal")
 
 
 def func(x: float, CONST_A: float) -> float:
