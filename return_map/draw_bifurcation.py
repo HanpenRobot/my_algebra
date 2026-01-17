@@ -68,11 +68,6 @@ def draw(n: int):
     N_max = 10
     start_CONST_A = 1.0
     end_CONST_A = 4.2
-    plt.title(
-        rf"bifurcation plot {start_CONST_A} < $\alpha$ < {end_CONST_A:.2f}",
-        fontsize=TITLE_FONT_SIZE,
-    )
-
     init_value = 0.2
     tmp_res = []
     CONST_LIST = []
@@ -83,6 +78,10 @@ def draw(n: int):
         if tmp_const > end_CONST_A:
             break
         tmp_const += delta
+    plt.title(
+        rf"bifurcation plot {start_CONST_A} < $\alpha$ < {tmp_const:.2f}",
+        fontsize=TITLE_FONT_SIZE,
+    )
 
     for CONST_A in CONST_LIST:
         tmp_res += get_limit_value(
