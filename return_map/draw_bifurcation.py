@@ -65,7 +65,6 @@ def draw(n: int):
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
     plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
-    N_max = 10
     start_CONST_A = 1.0
     end_CONST_A = 4.2
     init_value = 0.2
