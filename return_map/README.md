@@ -1,5 +1,7 @@
 # draw_logistic_map
 ## ロジスティック写像$`x_{n+1} = \alpha x_n(1-x_n)`$のリターンマップのアニメーション
+- $\alpha=1.5$の時は、安定不動点に収束する。
+![./logistic_map_1.5.gif](./logistic_map_1.5.gif)
 - $\alpha=2.8$の時は、安定不動点に収束する。
 ![./logistic_map_2.8.gif](./logistic_map_2.8.gif)
 - $\alpha=2.95$の時は、ゆっくりと安定不動点に収束する。($\alpha=3$ が唯一の解と周期が2の解との分岐点)
