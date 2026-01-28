@@ -1,6 +1,6 @@
 # [parabola_infinity.frag](./parabola_infinity.frag)
 - [parabola_infinity.frag](./parabola_infinity.frag)は放物線$`y = x^2`$は無限遠点で唯一の交点をもつことをglsl-canvasで確認するプログラムです。
-- vscodeの拡張機能 `glsl-canvas`で表示できます。
+- vscodeの拡張機能 `glsl-canvas`で表示できます。動画は[こちら](https://youtu.be/vqgPitjf-Kg)
 
 
 
