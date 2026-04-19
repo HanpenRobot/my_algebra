@@ -1,19 +1,24 @@
 #include <stdio.h>
 #include <math.h>
-double fnf(double x, double y)
-{
-    return (y - 12.0 * x + 3.0);
-}
+// double fnf(double x, double y)
+// {
+//     return (y - 12.0 * x + 3.0);
+// }
+
+// double expected_f(double t)
+// {
+//     return 12.0 * t + 9.0 - 8 * exp(t);
+// }
 
 double expected_f(double t)
 {
-    return 12.0 * t + 9.0 - 8 * exp(t);
+    return exp(-2.0 * t);
 }
 
-// double fnf(double t, double y)
-// {
-//     return (-2.0 * y);
-// }
+double fnf(double t, double y)
+{
+    return (-2.0 * y);
+}
 
 int main(void)
 {
@@ -26,7 +31,7 @@ int main(void)
     printf("X Y\n");
     t = 0.0;
     x = zz;
-    h = 0.0001;
+    h = 0.001;
     for (i = 1; i < N; i++)
     {
         k1 = h * fnf(t, x);
@@ -39,6 +44,7 @@ int main(void)
         res = expected_f(t);
         abs_err = fabs(res - x);
         printf("i=%d, k=%f , t=%f, x=%f, expected_f=%f, abs_err=%f\n", i, k, t, x, res, abs_err);
+        // printf("i=%d, k=%f , t=%f, x=%f\n", i, k, t, x);
     }
     return 0;
 }
