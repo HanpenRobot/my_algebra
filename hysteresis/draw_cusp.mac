@@ -1,0 +1,115 @@
+
+alpha:1;
+height_z:1;
+N:400;
+stp:0.06;
+start_value:-10;
+/*YZ=X**2*/
+curve:makelist
+([alpha * x, alpha * x**2,height_z], x, start_value, N,stp)$
+
+
+height_y:1;
+/*YZ=X**2*/
+curve2:makelist
+([alpha * x,height_y, alpha * x* x], x, start_value, N,stp)$
+
+height_x:1;
+/*YZ=X**2*/
+curve3:makelist
+([height_x, alpha * x, alpha * 1.0 / x], x, start_value, N,stp)$
+
+
+
+x_max:10;
+y_max:10;
+z_max:10;
+xr:[-x_max,x_max];
+yr:[-y_max,y_max];
+zr:[-z_max,z_max];
+x1:-x_max$
+x2:x_max$
+y1:-y_max$
+y2:y_max$
+z1:-z_max$
+z2:z_max$
+
+load
+(draw);
+scene:points
+(curve)$
+scene2:points
+(curve2)$
+scene3:points
+(curve3)$
+
+draw3d
+(
+font = "Arial", font_size = 15,
+/* xaxis = true, yaxis = true,
+xtics = true, */
+xtics = 2,
+ytics = 2,
+ztics = 2,
+yaxis_secondary = true,
+ytics_secondary = true,
+color = gray,
+/* xyplane = %e-2, */
+title="YZ=X*X",
+color=black,
+xrange=xr,yrange=yr,zrange=zr,
+head_length=0.05,head_angle=10,
+proportional_axes=xyz,
+
+axis_3d=true,
+xyplane=0,
+xaxis=true,yaxis=true,zaxis=true,
+xaxis_type=solid,yaxis_type=solid,zaxis_type=solid,
+xaxis_color=black,yaxis_color=black,zaxis_color=black,
+xaxis_width=3,yaxis_width=3,zaxis_width=3,
+/* head_length=0.2,head_angle=10, */
+
+ylabel="x",xlabel="y",zlabel="z",
+color=red,key="(X,Y,Z)=(t,t*t,1)",
+point_type=7,scene,
+color=green,key="(X,Y,Z)=(u,1,u*u)",
+point_type=7,scene2,
+color=blue,key="(X,Y,Z)=(1,1/v,v)",
+point_type=7,scene3,
+
+/*領域D*/
+key="YZ=X*X",
+color=purple,
+
+/* enhanced3d=true,
+palette=[15,12,25],
+color=purple, */
+/*YZ=X**2*/
+/*Z=X**2/Y*/
+explicit
+  (
+x*x/y,
+x,-x_max,x_max,
+y,-y_max,y_max
+)
+
+
+)$
+
+
+
+sqrt(5)*%i;
+
+exp(2*%pi*%i/5)
+
+
+zeta:exp(2*%pi*%i/5);
+float(realpart(1+zeta+zeta**2));
+
+cos(%pi/2)
+
+
+cos(2*%pi/5)
+
+
+
