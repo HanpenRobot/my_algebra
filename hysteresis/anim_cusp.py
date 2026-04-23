@@ -62,19 +62,19 @@ def draw(n: int):
     plt.plot(
         X,
         Y,
-        label="y=-x^3+Ax",
+        label=r"$y=-x^3+Ax$",
         color=RT_LINE_COLOR,
         linewidth=LINE_WIDTH,
     )
     if A[n] > 0:
-        plt.plot(
-            [x_h, x_h],  # 縦棒
-            [0, cusp_value],
-            # label=f"y=B={cusp_value:.2f}",
-            color="#000000",
-            linewidth=LINE_WIDTH,
-            linestyle="--",
-        )
+        # plt.plot(
+        #     [x_h, x_h],  # 縦棒
+        #     [0, cusp_value],
+        #     # label=f"y=B={cusp_value:.2f}",
+        #     color="#000000",
+        #     linewidth=LINE_WIDTH,
+        #     linestyle="--",
+        # )
         # plt.plot(
         #     [x_h, x_h],  # 極大値にマーカーを表示
         #     [0, cusp_value],
@@ -99,14 +99,14 @@ def draw(n: int):
             linewidth=LINE_WIDTH,
         )
 
-        plt.plot(
-            [-x_h, -x_h],  # 縦棒
-            [0, -cusp_value],
-            # label=f"y=B=-{cusp_value:.2f}",
-            color="#000000",
-            linewidth=LINE_WIDTH,
-            linestyle="--",
-        )
+        # plt.plot(
+        #     [-x_h, -x_h],  # 縦棒
+        #     [0, -cusp_value],
+        #     # label=f"y=B=-{cusp_value:.2f}",
+        #     color="#000000",
+        #     linewidth=LINE_WIDTH,
+        #     linestyle="--",
+        # )
         # plt.plot(
         #     [-x_h],  # 極小値を取る時のx座標にマーカーを表示
         #     [0],
