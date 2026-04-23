@@ -35,7 +35,7 @@ def cusp(x: float, A: float) -> float:
 def draw(n: int):
     print(f"plotting {n=} ...")
     # A = list(np.arange(-5, 5, 0.1))
-    A = [-2.0]
+    A = [-0.0]
     plt.cla()
     plt.title(f"A=${A[n]:.2f}$", fontsize=TITLE_FONT_SIZE, loc="left")
     plt.xlabel(r"$x$", fontsize=LABEL_FONT_SIZE)
@@ -130,4 +130,4 @@ FRAMES = 1
 res = FuncAnimation(fig, draw, interval=100, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
-res.save(f"./cusp_anim001.gif", writer="imagemagick")
+res.save(f"./cusp_anim002.gif", writer="imagemagick")
