@@ -28,7 +28,7 @@ $`\lvert x(t) - x_e \rvert \simeq 0`$のとき$`(1)`$に関して以下が成立
 これは微分方程式$`(1)`$を平衡点$`x_e`$の近傍で線形近似した結果である。
 このため、平衡点$`x_e`$の近傍で
 ```math
-x(t) = \exp \Big( f(x_e)t \Big) + x_e
+x(t) = \exp \left( f(x_e)t \right) + x_e
 ```
 となる。
 
@@ -41,7 +41,7 @@ $`x_e`$が安定な平衡点であるときに
 ```
 という結果になる。$`f(x_e)<0`$なので
 ```math
-\lim_{t\to\infty} \exp \Big( f(x_e)t \Big) = 0
+\lim_{t\to\infty} \exp \left( f(x_e)t \right) = 0
 ```
 となることに注意。
 
@@ -59,16 +59,16 @@ G(x)=-x^3 + Ax \cdots (4)
 
 
 ```math
-G(\sqrt {\frac{A}{3}} )=-\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \cdots (4)
+G\left(\sqrt {\frac{A}{3}} \right)=-\left(\sqrt{\frac{A}{3}}\right)^3 + A\sqrt{\frac{A}{3}} \cdots (4)
 ```
 
 ```math
-\therefore \left| -\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \right| < B \cdots (5)
+\therefore \left| -\left(\sqrt{\frac{A}{3}}\right)^3 + A\sqrt{\frac{A}{3}} \right| < B \cdots (5)
 ```
 $`(5)`$の不等式を満たす$`A, B`$で解の個数は3個になる。
 
 ```math
-\therefore \left| -\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \right| \ge B \cdots (6)
+\therefore \left| -\left(\sqrt{\frac{A}{3}}\right)^3 + A\sqrt{\frac{A}{3}} \right| \ge B \cdots (6)
 ```
 $`(5)`$の不等式を満たす$`A, B`$で解の個数は1個になる。
 
