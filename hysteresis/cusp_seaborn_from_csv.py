@@ -30,9 +30,28 @@ def create_frame(angle: int):
     ax = fig.add_subplot(111, projection="3d")
     sc = ax.scatter(ans_A, ans_B, ans_X, c=ans_X, cmap="viridis", marker="o")
     ax.view_init(30, angle * 4)
-    ax.set_xlabel("A-axis")
-    ax.set_ylabel("B-axis")
-    ax.set_zlabel("x-axis")
+    ax.set_xlabel("A-axis", fontsize=22)
+    ax.set_ylabel("B-axis", fontsize=22)
+    ax.set_zlabel("x-axis", fontsize=22)
+
+    plt.colorbar(sc)
+    plt.close()
+
+    buf = BytesIO()
+    fig.savefig(buf)
+    return Image.open(buf)
+
+
+def create_frame2(angle: int):
+    print(f"{angle=}")
+
+    fig = plt.figure(figsize=(12, 12))
+    ax = fig.add_subplot(111, projection="3d")
+    sc = ax.scatter(ans_A, ans_B, ans_X, c=ans_X, cmap="viridis", marker="o")
+    ax.view_init(angle * 2, angle * 2)
+    ax.set_xlabel("A-axis", fontsize=22)
+    ax.set_ylabel("B-axis", fontsize=22)
+    ax.set_zlabel("x-axis", fontsize=22)
 
     plt.colorbar(sc)
     plt.close()
@@ -43,9 +62,9 @@ def create_frame(angle: int):
 
 
 FRAMES = 90
-images = [create_frame(angle) for angle in range(FRAMES)]
+images = [create_frame2(angle) for angle in range(FRAMES)]
 images[0].save(
-    "./cubic_root_output.gif",
+    "./cubic_root_output2.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
