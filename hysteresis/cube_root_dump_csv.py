@@ -6,7 +6,7 @@ from sympy import Eq, solve, symbols
 
 
 def func(x: float, a: float):
-    return -3 * x + a
+    return -3 * x ^ 2 + a
 
 
 L = 30
