@@ -59,16 +59,16 @@ G(x)=-x^3 + Ax \cdots (4)
 
 
 ```math
-G\Big(\sqrt {\frac{A}{3}} \Big)=-\Big(\sqrt {\frac{A}{3}}\Big)^3 + A\sqrt {\frac{A}{3}} \cdots (4)
+G(\sqrt {\frac{A}{3}} )=-\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \cdots (4)
 ```
 
 ```math
-\therefore \left| -\Big(\sqrt {\frac{A}{3}}\Big)^3 + A\sqrt {\frac{A}{3}} \right| < B \cdots (5)
+\therefore \left| -\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \right| < B \cdots (5)
 ```
 $`(5)`$の不等式を満たす$`A, B`$で解の個数は3個になる。
 
 ```math
-\therefore \left| -\Big(\sqrt {\frac{A}{3}}\Big)^3 + A\sqrt {\frac{A}{3}} \right| \ge B \cdots (6)
+\therefore \left| -\Big(\sqrt{\frac{A}{3}}\Big)^3 + A\sqrt{\frac{A}{3}} \right| \ge B \cdots (6)
 ```
 $`(5)`$の不等式を満たす$`A, B`$で解の個数は1個になる。
 
