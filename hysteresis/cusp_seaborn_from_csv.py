@@ -26,7 +26,7 @@ with open(file_name, encoding="UTF-8") as f:
 def create_frame(angle: int):
     print(f"{angle=}")
 
-    fig = plt.figure(figsize=(8, 6))
+    fig = plt.figure(figsize=(12, 12))
     ax = fig.add_subplot(111, projection="3d")
     sc = ax.scatter(ans_A, ans_B, ans_X, c=ans_X, cmap="viridis", marker="o")
     ax.view_init(30, angle * 4)
@@ -62,6 +62,7 @@ def create_frame2(angle: int):
 
 
 FRAMES = 90
+FRAMES = 180
 images = [create_frame2(angle) for angle in range(FRAMES)]
 images[0].save(
     "./cubic_root_output2.gif",
