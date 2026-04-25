@@ -10,9 +10,17 @@
 > ```math
 > \frac{d x}{d t} = F(x,A \pm \Delta A,B \pm \Delta B)
 > ```
-> の解$`x_{A \pm \Delta A,B \pm \Delta B}(t)`$の定常状態 $`\lim_{t\to\infty} x_{A \pm \Delta A,B \pm \Delta B}(t)`$が$`x_{A,B}(t)`$ と大きく異なる値に突然ジャンプする現象 (カタストロフィ)が発生することがある。
+> の解$`x_{A \pm \Delta A,B \pm \Delta B}(t)`$の定常状態
+> ```math
+> \lim_{t\to\infty} x_{A \pm \Delta A,B \pm \Delta B}(t)
+> ```
+> が$`x_{A,B}(t)`$ と大きく異なる値に突然ジャンプする現象 (カタストロフィ)が発生することがある。
 >
-> また、$`A,B`$が$`A \pm \Delta A,B \pm \Delta B`$に変動する経路によって、$`\lim_{t\to\infty} x_{A \pm \Delta A,B \pm \Delta B}(t)`$の値が異なる現象を履歴効果 (ヒステリシス)とよぶ。
+> また、$`A,B`$が$`A \pm \Delta A,B \pm \Delta B`$に変動する経路によって、
+> ```math
+> \lim_{t\to\infty} x_{A \pm \Delta A,B \pm \Delta B}(t)
+> ```
+> の値が異なる現象を履歴効果 (ヒステリシス)とよぶ。
 > カタストロフィとヒステリシスが起こる微分方程式の例として、以下の実数パラメータ$`A , B`$をもつ1変数$`x`$に関する非線形微分方程式が存在する。
 > ```math
 > \frac{d x}{d t} = F(x,A,B)=-x^3 + Ax - B \cdots (1)
@@ -20,15 +28,11 @@
 > この資料では$`(1)`$でカタストロフィとヒステリシスが発生する理由を説明する。
 
 
-以下の実数パラメータ$`A , B`$をもつ1変数$`x`$に関する非線形微分方程式を考える。
-```math
-\frac{d x}{d t} = F(x,A,B)=-x^3 + Ax - B \cdots (1)
-```
-このとき、
+$`(1)`$の微分方程式の解$`x_{A,B}(t)`$で
 ```math
 \frac{d x}{d t} = F(x,A,B)=-x^3 + Ax - B=0 \cdots (2)
 ```
-を満たす$`x(t)=Const`$を微分方程式$`(1)`$の平衡点(不動点と呼ぶこともある)とよぶ。平衡点を$`x_e`$と表記する。
+を満たす解(つまり、$`x_{A,B}(t)=時間tに゙関して定数`$となる解)を微分方程式$`(1)`$の平衡点(不動点と呼ぶこともある)とよぶ。平衡点を$`x_e`$と表記する。
 (平衡点はequilibrium pointなので、$`x_e`$という表記を採用した。)
 
 
