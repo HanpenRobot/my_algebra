@@ -32,13 +32,13 @@ y=B \cdots (4)
 (3)と(4)の交点数の変化について以下で説明する。
 まず$`A<0`$のときの$`y=-x^3 + Ax`$のグラフの例を以下に示す。
 
-![./cusp_anim001.gif](./cusp_anim001.gif)
+![./cusp_anim_A=-2.gif](./cusp_anim_A=-2.gif)
 *Fig.1 $`y=-x^3 -2x`$のプロット ($`x`$に関して単調減少なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ)*
 
-![./cusp_anim002.gif](./cusp_anim002.gif)
+![./cusp_anim_A=0.gif](./cusp_anim_A=0.gif)
 *Fig.2 $`y=-x^3`$のプロット ($`x`$に関して単調減少なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ)*
 
-![./cusp_anim006.gif](./cusp_anim006.gif)
+![./cusp_anim_A=3.gif](./cusp_anim_A=3.gif)
 *Fig.3 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。このため$`|B| \le 2`$のとき$`y=B`$と2個の実数解をもつ)*
 
 ![./cusp_anim.gif](./cusp_anim.gif)
