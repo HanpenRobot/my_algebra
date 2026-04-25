@@ -124,41 +124,13 @@ $`(8)`$を$`(6)`$に代入すると
 *Fig.9 カスプ$`\left( A,B \right) = (3u^2, 2u^3), \left( -\infty <  u < \infty \right)`$のプロット*
 
 
+> [!NOTE]
 
-![./slope_at_fixpoint.gif](./slope_at_fixpoint.gif)
-*Fig.4 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e{(A,B)}=-3{x_e}^2 + A`$(平衡点)の3Dプロット(その1)*
+> $`(1)`$を$`x`$で偏微分した結果は以下のようになる。
 
-
-![./slope_at_fixpoint2.gif](./slope_at_fixpoint2.gif)
-*Fig.5 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e`$(平衡点)を$`\frac{d F}{d x}(x_e)=-3{x_e}^2 + A `$の3Dプロット(その2)*
-
-
-
-<!-- \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7) -->
-
-<!-- ```math
--x^3 + Ax - B=0 \cdots (3) \\
--3x^2 + A =0 \cdots (4) \\
-A=3x^2 \cdots (5) \\
-
-(5)を(3)に代入すると
--x^3 + Ax - B = -x^3 + (3x^2)*x - B = -x^3 ^ 3x^3 - B = 2x^3 = B \cdots (6) \\
-
-\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7)
-
-``` -->
-$`(7)`$の曲線はカスプ(cusp)と呼ばれる。$`(7)`$の曲線は以下である。
-
-![./draw_cusp.gif](./draw_cusp.gif)
-<!-- *Fig.1 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット* -->
-
-
-
-$`(1)`$を$`x`$で偏微分した結果は以下のようになる。
-
-```math
-\frac{\partial^2 x}{\partial x\partial t}(x) = \frac{d F}{d x}(x)=-3x^2 + A \cdots (3)
-```
+> ```math
+> \frac{\partial^2 x}{\partial x\partial t}(x) = \frac{d F}{d x}(x)=-3x^2 + A \cdots (3)
+> ```
 $`(3)`$を$`f(x)`$とおく。
 
 このとき、$`\lvert x(t) - x_e \rvert \simeq 0`$のとき$`(1)`$に関して以下が成立する。
@@ -198,6 +170,37 @@ $`x_e`$が安定な平衡点であるときに
 
 
 
+
+
+
+
+
+![./slope_at_fixpoint.gif](./slope_at_fixpoint.gif)
+*Fig.4 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e{(A,B)}=-3{x_e}^2 + A`$(平衡点)の3Dプロット(その1)*
+
+
+![./slope_at_fixpoint2.gif](./slope_at_fixpoint2.gif)
+*Fig.5 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e`$(平衡点)を$`\frac{d F}{d x}(x_e)=-3{x_e}^2 + A `$の3Dプロット(その2)*
+
+
+
+<!-- \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7) -->
+
+<!-- ```math
+-x^3 + Ax - B=0 \cdots (3) \\
+-3x^2 + A =0 \cdots (4) \\
+A=3x^2 \cdots (5) \\
+
+(5)を(3)に代入すると
+-x^3 + Ax - B = -x^3 + (3x^2)*x - B = -x^3 ^ 3x^3 - B = 2x^3 = B \cdots (6) \\
+
+\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7)
+
+``` -->
+$`(7)`$の曲線はカスプ(cusp)と呼ばれる。$`(7)`$の曲線は以下である。
+
+![./draw_cusp.gif](./draw_cusp.gif)
+<!-- *Fig.1 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット* -->
 
 
 
