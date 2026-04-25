@@ -41,7 +41,7 @@ y=B \cdots (4)
 ![./cusp_anim_A=3.gif](./cusp_anim_A=3.gif)
 *Fig.3 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。このため$`|B| \le 2`$のとき$`y=B`$と2個の実数解をもつ)*
 
-![./cusp_anim.gif](./cusp_anim.gif)
+![./new_cusp_anim.gif](./new_cusp_anim.gif)
 *Fig.4 $`y=B`$が$`y=-x^3 + Ax`$と２点で接する様子のアニメーション*
 
 > [!IMPORTANT]
