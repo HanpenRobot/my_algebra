@@ -43,10 +43,10 @@ y=B \cdots (4)
 *Fig.3 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。このため$`\rvert B \lvert = 2`$のとき$`y=B`$と2個の実数解をもつ、$`\rvert B \lvert < 2`$のときは$`y=B`$と3個の実数解をもつ)*
 
 ![./new_cusp_anim.gif](./new_cusp_anim.gif)
-*Fig.4 $`y=B=\sqrt{\frac{A}{3}}, A>0`$のときに$`y=-x^3 + Ax`$と２点で接することがわかるアニメーション*
+*Fig.4  $`y=B=\sqrt{\frac{A}{3}}, A>0`$のときに$`y=-x^3 + Ax`$と２点で接することがわかるアニメーション*
 
 ![./new_cusp_anim_zeropoint.gif](./new_cusp_anim_zeropoint.gif)
-*Fig.5 $`y=-x^3 + Ax \pm \sqrt{\frac{A}{3}}`$のときのグラフ ($`-x^3 + Ax \pm \sqrt{\frac{A}{3}}=0`$の解は２重解が1つ、１重解が1つであることがわかる)*
+*Fig.5  $`y=-x^3 + Ax \pm \sqrt{\frac{A}{3}}`$のときのグラフ ($`-x^3 + Ax \pm \sqrt{\frac{A}{3}}=0`$の解は２重解が1つ、１重解が1つであることがわかる)*
 
 
 > [!IMPORTANT]
