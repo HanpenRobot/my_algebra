@@ -46,7 +46,7 @@ y=B \cdots (4)
 *Fig.4  $`y=B=\sqrt{A/3}, A>0`$のときに$`y=-x^3 + Ax`$と２点で接することがわかるアニメーション*
 
 ![./new_cusp_anim_zeropoint.gif](./new_cusp_anim_zeropoint.gif)
-*Fig.5  $`y=-x^3 + Ax \pm \sqrt{A/3}`$のときのグラフ ($`-x^3 + Ax \pm \sqrt{A/3}=0`$の解は２重解が1つ、１重解が1つであることがわかる。また、$`-x^3 + Ax \mp \sqrt{A/3} \pm \varepsilon =0, \varepsilon > 0`$のときは3つの異なる解をもつことも、このグラフからわかる)*
+*Fig.5  $`y=-x^3 + Ax \pm \sqrt{A/3}`$のときのグラフ ($`-x^3 + Ax \pm \sqrt{A/3}=0`$の解は２重解が1つ、１重解が1つであることがわかる。また、$`-x^3 + Ax \pm \sqrt{A/3} \mp \varepsilon =0, \varepsilon > 0`$のときは3つの異なる解をもつことも、このグラフからわかる)*
 
 
 > [!IMPORTANT]
