@@ -13,24 +13,89 @@
 (平衡点はequilibrium pointなので、$`x_e`$という表記を採用した。)
 
 
-さて、微分方程式$`(1)`$の平衡点$`x_e`$は$`x^3 + Ax - B=0`$という３次方程式の実数解である。
-この実数解の個数は$`A, B`$の値によって異なる3個の解の場合と1個の解のときがある。$`-30 \le A,B \le 30`$の範囲で３次方程式$`-x^3 + Ax - B=0`$の実数解をもとめて3Dプロットしたものが以下の図である。
+さて、微分方程式$`(1)`$の平衡点$`x_e`$は$`-x^3 + Ax - B=0`$という３次方程式の実数解である。
+この実数解の個数は$`A, B`$の値によって変わる。
+> [!IMPORTANT]
+> この個数は
+> $`(1)`$と$`(3)`$の交点数=1になる$`A, B`$の値のときは、実数解の個数=1
+> $`(1)`$と$`(3)`$の交点数=2になる$`A, B`$の値のときは、実数解の個数=3
+>
+
+```math
+y=-x^3 + Ax \cdots (1) \\
+y=B \cdots (2)
+```
+実数解の個数の変化について以下で説明する。
+まず$`A<0`$のときの$`y=-x^3 + Ax`$のグラフの例を以下に示す。
+
+![./cusp_anim001.gif](./cusp_anim001.gif)
+*Fig.1 $`y=-x^3 -2x`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ$)*
+
+![./cusp_anim002.gif](./cusp_anim002.gif)
+*Fig.2 $`y=-x^3`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ$)*
+
+![./cusp_anim006.gif](./cusp_anim006.gif)
+*Fig.2 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。に$`y=B`$と唯一の解をもつ$)*
+
+
+この実数解の個数は$`A, B`$の値によって異なる3個の解の場合と1個の解のときがある。これは以下のアニメーションを見ると理解できる。
+
+![./cusp_anim.gif](./cusp_anim.gif)
+*Fig.1 $`y=-x^3 + Ax`$と$`y=B`$の交点のプロット*
+
+
+
+
+```math
+-x^3 + Ax - B=0 \cdots (3) \\
+-3x^2 + A =0 \cdots (4) \\
+A=3x^2 \cdots (5) \\
+```
+
+$`(5)`$を$`(3)`$に代入すると
+
+```math
+-x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (6) \\
+
+\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (7)
+
+
+```
+
+<!-- \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7) -->
+
+<!-- ```math
+-x^3 + Ax - B=0 \cdots (3) \\
+-3x^2 + A =0 \cdots (4) \\
+A=3x^2 \cdots (5) \\
+
+(5)を(3)に代入すると
+-x^3 + Ax - B = -x^3 + (3x^2)*x - B = -x^3 ^ 3x^3 - B = 2x^3 = B \cdots (6) \\
+
+\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7)
+
+``` -->
+$`(7)`$の曲線はカスプ(cusp)と呼ばれる。$`(7)`$の曲線は以下である。
+
+![./draw_cusp.gif](./draw_cusp.gif)
+<!-- *Fig.1 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット* -->
+
+$`-30 \le A,B \le 30`$の範囲で３次方程式$`-x^3 + Ax - B=0`$の実数解をもとめて3Dプロットしたものが以下の図である。
 
 ![./cubic_root_output1.gif](./cubic_root_output1.gif)
 *Fig.1 ３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その1)*
-
-
 ![./cubic_root_output2.gif](./cubic_root_output2.gif)
 *Fig.2 ３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その2)*
 
 
-$`(1)`$を$`x`$で偏微分した結果を$`f(x)`$とする。
+$`(1)`$を$`x`$で偏微分した結果は以下のようになる。
 
 ```math
-f(x) = \frac{\partial^2 x}{\partial x\partial t} = \frac{d F}{d x}=-3x^2 + A \cdots (3)
+\frac{\partial^2 x}{\partial x\partial t}(x) = \frac{d F}{d x}(x)=-3x^2 + A \cdots (3)
 ```
+$`(3)`$を$`f(x)`$とおく。
 
-$`\lvert x(t) - x_e \rvert \simeq 0`$のとき$`(1)`$に関して以下が成立する。
+このとき、$`\lvert x(t) - x_e \rvert \simeq 0`$のとき$`(1)`$に関して以下が成立する。
 ```math
 \frac{d x}{d t} = f(x_e)(x-x_e) \cdots (4)
 ```
@@ -43,6 +108,15 @@ x(t) = \exp \left( f(x_e)t \right) + x_e \cdots (5)
 
 $`f(x_e)<0`$ならば、$`x_e`$は安定な平衡点と呼ぶ。<br>
 $`f(x_e)>0`$ならば、$`x_e`$は不安定な平衡点と呼ぶ。<br>
+
+![./slope_at_fixpoint.gif](./slope_at_fixpoint.gif)
+*Fig.3 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e{(A,B)}=-3{x_e}^2 + A`$(平衡点)の3Dプロット(その1)*
+
+
+![./slope_at_fixpoint2.gif](./slope_at_fixpoint2.gif)
+*Fig.4 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e`$(平衡点)を$`\frac{d F}{d x}(x_e)=-3{x_e}^2 + A `$の3Dプロット(その2)*
+
+
 $`x_e`$が安定な平衡点であるときに
 微分方程式$`(1)`$を$`\lvert x(0) - x_e \rvert \simeq 0`$をみたす初期値$`x(0)`$でルンゲ・クッタ法などで変数$`t`$に関して数値積分すると
 ```math
