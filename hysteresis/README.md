@@ -110,13 +110,18 @@ A=3x^2 \cdots (8)
 $`(8)`$を$`(6)`$に代入すると
 
 ```math
--x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (9)
+-x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdots (9)
 ```
+そして、$`A,B`$に関してパラメータ表示の式に変形すると
+
 ```math
-\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (10)
+\therefore \left( A,B \right) = (3u^2, 2u^3),  \left( -\infty <  u < \infty \right) \cdots (10)
 ```
-![./draw_cusp.gif](./draw_cusp.gif)
-*Fig.9 カスプ$`\left( A,B \right) = (3x^2, 2x^3), \left( -\infty <  x < \infty \right)`$のプロット*
+となる。Fig. 9に$`(10)`$のカスプのグラフを示す。なお、黄色の領域はFig. 6, Fig. 7, Fig. 8のグラフにおいて$`A,B`$に対応する解`x_e(A,B)`の個数が3つになる領域である。赤色のカスプの曲線上では解の個数は、2重解が1つ、１重解となる。それ以外の領域では異なる3つの解をもつ。
+
+
+![./draw_cusp_area.gif ](./draw_cusp_area.gif)
+*Fig.9 カスプ$`\left( A,B \right) = (3u^2, 2u^3), \left( -\infty <  u < \infty \right)`$のプロット*
 
 
 
