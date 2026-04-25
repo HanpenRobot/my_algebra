@@ -17,50 +17,82 @@
 この実数解の個数は$`A, B`$の値によって変わる。
 > [!IMPORTANT]
 > この個数は
-> $`(1)`$と$`(3)`$の交点数=1になる$`A, B`$の値のときは、実数解の個数=1
-> $`(1)`$と$`(3)`$の交点数=2になる$`A, B`$の値のときは、実数解の個数=3
+> ```
+> (3)と(4)の交点数=1になる$`A, B`$の値のときは、実数解の個数=1
+> (3)と(4)の交点数=2になる$`A, B`$の値のときは、実数解の個数=3
+> ```
 >
 
 ```math
-y=-x^3 + Ax \cdots (1) \\
-y=B \cdots (2)
+y=-x^3 + Ax \cdots (3) \\\\
+y=B \cdots (4)
 ```
 実数解の個数の変化について以下で説明する。
 まず$`A<0`$のときの$`y=-x^3 + Ax`$のグラフの例を以下に示す。
 
 ![./cusp_anim001.gif](./cusp_anim001.gif)
-*Fig.1 $`y=-x^3 -2x`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ$)*
+*Fig.1 $`y=-x^3 -2x`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ)*
 
 ![./cusp_anim002.gif](./cusp_anim002.gif)
-*Fig.2 $`y=-x^3`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ$)*
+*Fig.2 $`y=-x^3`$のプロット ($`x`$に関して単調現象なグラフなので任意の実数$`B`$に対して$`y=B`$と唯一の解をもつ)*
 
 ![./cusp_anim006.gif](./cusp_anim006.gif)
-*Fig.2 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。に$`y=B`$と唯一の解をもつ$)*
-
-
-この実数解の個数は$`A, B`$の値によって異なる3個の解の場合と1個の解のときがある。これは以下のアニメーションを見ると理解できる。
+*Fig.3 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。このため$`|B| \le 2`$のとき$`y=B`$と2個の実数解をもつ)*
 
 ![./cusp_anim.gif](./cusp_anim.gif)
-*Fig.1 $`y=-x^3 + Ax`$と$`y=B`$の交点のプロット*
+*Fig.4 $`y=B`$が$`y=-x^3 + Ax`$と２点で接する様子のアニメーション*
+
+> [!IMPORTANT]
+> この実数解の個数は$`A, B`$の値によって異なる3個の解の場合と1個の解のときがある。
+> これは以下の3Dグラフを見ると理解できる。
 
 
 
+![./cubic_root_output1.gif](./cubic_root_output1.gif)
+*Fig.5 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その1)*
+![./cubic_root_output2.gif](./cubic_root_output2.gif)
+*Fig.6 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その2)*
+
+ところで、以下のグラフを見るとわかるように、実数解の個数は$`A, B`$の値によって平面上のある領域では異なる3個の解になるがそれ以外では1個の解のときがあることが確認できる。
 
 ```math
--x^3 + Ax - B=0 \cdots (3) \\
--3x^2 + A =0 \cdots (4) \\
-A=3x^2 \cdots (5) \\
+|B| \le \frac{2A \sqrt{A}}{\sqrt{3}}の範囲で実数解の個数が3、それ以外の場合は実数解の個数は1 \cdots (5)
 ```
 
-$`(5)`$を$`(3)`$に代入すると
+
+![./snapshot_cubic_root_stable.gif](./snapshot_cubic_root_stable.gif)
+*Fig.6 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その3), $`|B| \le \frac{2A \sqrt{A}}{\sqrt{3}}`$の範囲で実数解の個数が3,それ以外では1となっていることが確認できる。*
+
+$`A,B`$平面上で3個の解の実数解を持つ領域と1個実数解を持つ領域の境界の曲線はカスプと呼ばれる。この曲線は以下で求めることができる。
 
 ```math
--x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (6) \\
+-x^3 + Ax - B=0 \cdots (6) \\\\
+-3x^2 + A =0 \cdots (7) \\\\
+A=3x^2 \cdots (8) \\\\
+```
 
-\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (7)
+$`(8)`$を$`(6)`$に代入すると
+
+```math
+-x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (9) \\\\
+
+\therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (10)
 
 
 ```
+![./draw_cusp.gif](./draw_cusp.gif)
+*Fig.7 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット*
+
+
+
+![./slope_at_fixpoint.gif](./slope_at_fixpoint.gif)
+*Fig.4 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e{(A,B)}=-3{x_e}^2 + A`$(平衡点)の3Dプロット(その1)*
+
+
+![./slope_at_fixpoint2.gif](./slope_at_fixpoint2.gif)
+*Fig.5 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e`$(平衡点)を$`\frac{d F}{d x}(x_e)=-3{x_e}^2 + A `$の3Dプロット(その2)*
+
+
 
 <!-- \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right) \cdots (7) -->
 
@@ -80,12 +112,6 @@ $`(7)`$の曲線はカスプ(cusp)と呼ばれる。$`(7)`$の曲線は以下で
 ![./draw_cusp.gif](./draw_cusp.gif)
 <!-- *Fig.1 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット* -->
 
-$`-30 \le A,B \le 30`$の範囲で３次方程式$`-x^3 + Ax - B=0`$の実数解をもとめて3Dプロットしたものが以下の図である。
-
-![./cubic_root_output1.gif](./cubic_root_output1.gif)
-*Fig.1 ３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その1)*
-![./cubic_root_output2.gif](./cubic_root_output2.gif)
-*Fig.2 ３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その2)*
 
 
 $`(1)`$を$`x`$で偏微分した結果は以下のようになる。
@@ -109,12 +135,6 @@ x(t) = \exp \left( f(x_e)t \right) + x_e \cdots (5)
 $`f(x_e)<0`$ならば、$`x_e`$は安定な平衡点と呼ぶ。<br>
 $`f(x_e)>0`$ならば、$`x_e`$は不安定な平衡点と呼ぶ。<br>
 
-![./slope_at_fixpoint.gif](./slope_at_fixpoint.gif)
-*Fig.3 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e{(A,B)}=-3{x_e}^2 + A`$(平衡点)の3Dプロット(その1)*
-
-
-![./slope_at_fixpoint2.gif](./slope_at_fixpoint2.gif)
-*Fig.4 ３次方程式$`-x^3 + Ax - B=0`$の実数解$`x_e`$(平衡点)を$`\frac{d F}{d x}(x_e)=-3{x_e}^2 + A `$の3Dプロット(その2)*
 
 
 $`x_e`$が安定な平衡点であるときに
