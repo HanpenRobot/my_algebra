@@ -42,7 +42,11 @@ y=B \cdots (4)
 *Fig.3 $`y=-x^3+3x`$のプロット ($`y=-x^3+3x`$のグラフには極大値と極小値が存在している。このため$`|B| \le 2`$のとき$`y=B`$と2個の実数解をもつ)*
 
 ![./new_cusp_anim.gif](./new_cusp_anim.gif)
-*Fig.4 $`y=B`$が$`y=-x^3 + Ax`$と２点で接する様子のアニメーション*
+*Fig.4 $`y=B=\sqrt{\frac{A}{3}}, A>0`$のときに$`y=-x^3 + Ax`$と２点で接することがわかるアニメーション*
+
+![./new_cusp_anim_zeropoint.gif](./new_cusp_anim_zeropoint.gif)
+*Fig.5 $`y=-x^3 + Ax \pm \sqrt{\frac{A}{3}}`$のときのグラフ ($`-x^3 + Ax \pm \sqrt{\frac{A}{3}}=0`$の解は２重解が1つ、１重解が1つであることがわかる)*
+
 
 > [!IMPORTANT]
 > この実数解の個数は$`A, B`$の値によって異なる3個の解の場合と1個の解のときがある。
@@ -51,9 +55,9 @@ y=B \cdots (4)
 
 
 ![./cubic_root_output1.gif](./cubic_root_output1.gif)
-*Fig.5 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その1)*
+*Fig.6 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その1)*
 ![./cubic_root_output2.gif](./cubic_root_output2.gif)
-*Fig.6 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その2)*
+*Fig.7 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その2)*
 
 ところで、以下のグラフを見るとわかるように、実数解の個数は$`A, B`$の値によって平面上のある領域では異なる3個の解になるがそれ以外では1個の解のときがあることが確認できる。
 
@@ -63,7 +67,7 @@ y=B \cdots (4)
 
 
 ![./snapshot_cubic_root_stable.gif](./snapshot_cubic_root_stable.gif)
-*Fig.6 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その3), $`|B| \le \frac{2A \sqrt{A}}{\sqrt{3}}`$の範囲で実数解の個数が3,それ以外では1となっていることが確認できる。*
+*Fig.8 $`-30 \le A,B \le 30`$の範囲の３次方程式$`-x^3 + Ax - B=0`$の実数解の3Dプロット(その3), $`|B| \le \frac{2A \sqrt{A}}{\sqrt{3}}`$の範囲で実数解の個数が3,それ以外では1となっていることが確認できる。*
 
 $`A,B`$平面上で3個の解の実数解を持つ領域と1個実数解を持つ領域の境界の曲線はカスプと呼ばれる。この曲線は以下で求めることができる。
 
@@ -86,7 +90,7 @@ $`(8)`$を$`(6)`$に代入すると
 \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (10)
 ```
 ![./draw_cusp.gif](./draw_cusp.gif)
-*Fig.7 カスプ$`\left( A,B \right) = (3x^2, 2x^3), \left( -\infty <  x < \infty \right)`$のプロット*
+*Fig.9 カスプ$`\left( A,B \right) = (3x^2, 2x^3), \left( -\infty <  x < \infty \right)`$のプロット*
 
 
 
