@@ -18,13 +18,15 @@
 > [!IMPORTANT]
 > この個数は
 > ```
-> (3)と(4)の交点数=1になる$`A, B`$の値のときは、実数解の個数=1
-> (3)と(4)の交点数=2になる$`A, B`$の値のときは、実数解の個数=3
+> (3)と(4)の交点数=1になるA, Bの値のときは、実数解の個数=1
+> (3)と(4)の交点数=2になるA, Bの値のときは、実数解の個数=3
 > ```
 >
 
 ```math
-y=-x^3 + Ax \cdots (3) \\\\
+y=-x^3 + Ax \cdots (3)
+```
+```math
 y=B \cdots (4)
 ```
 実数解の個数の変化について以下で説明する。
@@ -66,22 +68,25 @@ y=B \cdots (4)
 $`A,B`$平面上で3個の解の実数解を持つ領域と1個実数解を持つ領域の境界の曲線はカスプと呼ばれる。この曲線は以下で求めることができる。
 
 ```math
--x^3 + Ax - B=0 \cdots (6) \\\\
--3x^2 + A =0 \cdots (7) \\\\
-A=3x^2 \cdots (8) \\\\
+-x^3 + Ax - B=0 \cdots (6)
+```
+```math
+-3x^2 + A =0 \cdots (7)
+```
+```math
+A=3x^2 \cdots (8)
 ```
 
 $`(8)`$を$`(6)`$に代入すると
 
 ```math
--x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (9) \\\\
-
+-x^3 + Ax - B = -x^3 + (3x^2)x - B = 2x^3 - B = 0 \cdot (9)
+```
+```math
 \therefore \left( A,B \right) = (3x^2, 2x^3),  \left( -\infty <  x < \infty \right) \cdots (10)
-
-
 ```
 ![./draw_cusp.gif](./draw_cusp.gif)
-*Fig.7 カスプ\left( A,B \right) = (3x^2, 2x^3),  \left( x \in \mathbb{R} \right)のプロット*
+*Fig.7 カスプ$`\left( A,B \right) = (3x^2, 2x^3), \left( -\infty <  x < \infty \right)`$のプロット*
 
 
 
