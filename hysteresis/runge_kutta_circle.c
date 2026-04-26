@@ -4,7 +4,7 @@
 double fnf(double t, double x, double A, double B)
 {
 
-    return (-pow(x, 3) - A * x - B);
+    return (-pow(x, 3) + A * x - B);
 }
 
 double get_runge_result(double A, double B, double init_value)
@@ -35,14 +35,15 @@ int main(void)
 {
 
     double A, B, init_vaule, res, R = 6.0;
-    A = 2, B = 4.0;
+    A = 10, B = 10.0;
     init_vaule = 4;
     // printf("微分方程式の初期値を入力してください。");
     // scanf("%lf", &init_vaule); // 4くらいが妥当??
     // 1. ファイルを書き込みモード("w")で開く
-    FILE *fp = fopen("ans_dump_circle.csv", "w");
+    FILE *fp = fopen("ans_dump_circle002.csv", "w");
     fprintf(fp, "A,B,theta,x,\n");
-    for (double theta = 0; theta < 360; theta += 0.1)
+    int num = 0;
+    for (double theta = 0; theta < 360; theta += 0.01)
     {
         A = R * cos(theta);
         B = R * sin(theta);
@@ -51,6 +52,7 @@ int main(void)
         // printf("theta= = %lf, res = %lf \n", theta, res);
         fprintf(fp, "%lf,%lf,%lf,%lf \n", A, B, theta, res);
         init_vaule = res;
+        num += 1;
     }
 
     return 0;
