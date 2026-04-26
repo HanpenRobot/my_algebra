@@ -26,7 +26,8 @@
 > \frac{d x}{d t} = F(x,A,B)=-x^3 + Ax - B \cdots (1)
 > ```
 > この資料では$`(1)`$でカタストロフィとヒステリシスが発生する理由を説明する。
-
+> ![./circle_runge_kutta_final2c.gif](./circle_runge_kutta_final2c.gif)
+> Fig.1 カタストロフィとヒステリシスの例
 
 $`(1)`$の微分方程式の解$`x_{A,B}(t)`$で
 ```math

@@ -35,8 +35,8 @@ double get_runge_result(double A, double B, double init_value)
 int main(void)
 {
 
-    double A, B, init_vaule, res, R = 6.0;
-    A = 14, B = 14.0;
+    double A, B, theta, init_vaule, res, R = 6.0;
+    A = 10, B = 20.0;
     init_vaule = 4;
     // printf("微分方程式の初期値を入力してください。");
     // scanf("%lf", &init_vaule); // 4くらいが妥当??
@@ -58,19 +58,60 @@ int main(void)
     //     R += 0.05;
     // }
     // printf("switch start!!\n");
-    for (double theta = -190; theta < 190.0; theta += 0.1)
+    for (int num = 0; num < 100000; num++)
+
     {
-        printf("%lf", theta);
-        A = (R + D) * cos(theta - M_PI);
-        B = (R + D) * sin(theta - M_PI);
-        // printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
+        printf("%lf\n", B);
+        // A = (R + D) * cos(theta - M_PI);
+        // B = (R + D) * sin(theta - M_PI);
+        //  printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
         res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
         // printf("theta= = %lf, res = %lf \n", theta, res);
+        theta = 0.0;
         fprintf(fp, "%lf,%lf,%lf,%lf \n", A, B, theta, res);
-        init_vaule = (((double)rand() / RAND_MAX) * 2.0) - 1.0;
-        printf("%lf", init_vaule);
-        num += 1;
-        R += 0.05;
+        init_vaule = res;
+        // printf("%lf", init_vaule);
+        B -= 0.1;
+        if (B < -20)
+        {
+            break;
+        }
+    }
+
+    // for (int num = 0; num < 100; num++)
+
+    // {
+    //     printf("%lf\n", B);
+    //     // A = (R + D) * cos(theta - M_PI);
+    //     // B = (R + D) * sin(theta - M_PI);
+    //     //  printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
+    //     res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
+    //     // printf("theta= = %lf, res = %lf \n", theta, res);
+    //     theta = 0.0;
+    //     fprintf(fp, "%lf,%lf,%lf,%lf \n", A, B, theta, res);
+    //     init_vaule = res;
+    //     // printf("%lf", init_vaule);
+    //     A += 0.1;
+    // }
+
+    for (int num = 0; num < 100000; num++)
+
+    {
+        printf("%lf\n", B);
+        // A = (R + D) * cos(theta - M_PI);
+        // B = (R + D) * sin(theta - M_PI);
+        //  printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
+        res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
+        // printf("theta= = %lf, res = %lf \n", theta, res);
+        theta = 0.0;
+        fprintf(fp, "%lf,%lf,%lf,%lf \n", A, B, theta, res);
+        init_vaule = res;
+        // printf("%lf", init_vaule);
+        B += 0.1;
+        if (B > 20.0)
+        {
+            break;
+        }
     }
 
     return 0;
