@@ -26,7 +26,7 @@ double get_runge_result(double A, double B, double init_value)
         k = (k1 + 2 * k2 + 2 * k3 + k4) / 6.0;
         t = t + h;
         x = x + k;
-        printf("%f,%f,%f,%f\n", t, A, B, x);
+        // printf("%f,%f,%f,%f\n", t, A, B, x);
     }
     return x;
 }
@@ -34,11 +34,21 @@ double get_runge_result(double A, double B, double init_value)
 int main(void)
 {
 
-    double A, B, init_vaule, res;
-    A = 2, B = 0.0;
-    printf("微分方程式の初期値を入力してください。");
-    scanf("%lf", &init_vaule); // 4くらいが妥当??
-    res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
-    printf("res = %lf", res);
+    double A, B, init_vaule, res, R = 6.0;
+    A = 2, B = 4.0;
+    init_vaule = 4;
+    // printf("微分方程式の初期値を入力してください。");
+    // scanf("%lf", &init_vaule); // 4くらいが妥当??
+    for (double theta = 0; theta < 360; theta += 0.1)
+    {
+        A = R * cos(theta);
+        B = R * sin(theta);
+        // printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
+        res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
+        // printf("theta= = %lf, res = %lf \n", theta, res);
+        printf("%lf,%lf,%lf,%lf \n", A, B, theta, res);
+        init_vaule = res;
+    }
+
     return 0;
 }
