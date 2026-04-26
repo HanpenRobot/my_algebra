@@ -39,6 +39,9 @@ int main(void)
     init_vaule = 4;
     // printf("微分方程式の初期値を入力してください。");
     // scanf("%lf", &init_vaule); // 4くらいが妥当??
+    // 1. ファイルを書き込みモード("w")で開く
+    FILE *fp = fopen("ans_dump_circle.csv", "w");
+    fprintf(fp, "A,B,theta,x,\n");
     for (double theta = 0; theta < 360; theta += 0.1)
     {
         A = R * cos(theta);
@@ -46,9 +49,32 @@ int main(void)
         // printf("theta= = %lf, init_vaule = %lf \n", theta, init_vaule);
         res = get_runge_result(A = A, B = B, init_vaule = init_vaule);
         // printf("theta= = %lf, res = %lf \n", theta, res);
-        printf("%lf,%lf,%lf,%lf \n", A, B, theta, res);
+        fprintf(fp, "%lf,%lf,%lf,%lf \n", A, B, theta, res);
         init_vaule = res;
     }
 
     return 0;
 }
+
+// #include <stdio.h>
+
+// int main() {
+//     // 1. ファイルを書き込みモード("w")で開く
+//     FILE *fp = fopen("example.csv", "w");
+//     if (fp == NULL) {
+//         printf("ファイルを開けませんでした\\n");
+//         return 1;
+//     }
+
+//     // 2. CSV形式でデータを出力 (コンマ区切り)
+//     fprintf(fp, "ID,Name,Age\\n");
+//     fprintf(fp, "1,Tanaka,25\\n");
+//     fprintf(fp, "2,Sato,30\\n");
+//     fprintf(fp, "3,Suzuki,22\\n");
+
+//     // 3. ファイルを閉じる
+//     fclose(fp);
+//     printf("CSVファイルを出力しました。\\n");
+
+//     return 0;
+// }
