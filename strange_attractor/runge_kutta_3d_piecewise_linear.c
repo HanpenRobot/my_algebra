@@ -33,7 +33,7 @@ double run_runge_result(double x0, double y0, double z0)
     y = y0;
     z = z0;
     FILE *fp = fopen("ans_piecewise_linear.csv", "w");
-    fprintf(fp, "t,x,y,z\n", t, x, y, x);
+    fprintf(fp, "t,x,y,z\n");
     for (i = 1; i < max_step; i++)
     {
 
@@ -59,7 +59,7 @@ double run_runge_result(double x0, double y0, double z0)
         z = z + m;
 
         t = t + h;
-        fprintf(fp, "%f,%f,%f,%f\n", t, x, y, x);
+        fprintf(fp, "%f,%f,%f,%f\n", t, x, y, z);
     }
     return x;
 }
