@@ -69,4 +69,4 @@ FRAMES = 1
 res = FuncAnimation(fig, draw, interval=50, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
-res.save(f"bifurcation_diagram.gif", writer="imagemagick")
+res.save(f"sync_phenom.gif", writer="imagemagick")

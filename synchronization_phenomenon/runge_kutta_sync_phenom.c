@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-double epsilon = 0.3, omega = 140.0;
+double epsilon = 0.3, omega = 0.5;
 
 double func1(double theta1, double theta2)
 {
-    double ans = 150.0 + epsilon * sin(theta2 - theta1);
+    double ans = omega + epsilon * sin(theta2 - theta1);
 
     return ans;
 }
 
 double func2(double theta1, double theta2)
 {
-    double ans = 150.0 + epsilon * sin(theta1 - theta2);
+    double ans = omega + epsilon * sin(theta1 - theta2);
     return ans;
 }
 
@@ -57,8 +57,7 @@ void run_runge_result(double theta1_0, double theta2_0)
 int main(void)
 {
 
-    // double theta1_0 = 0.0, theta2_0 = 3.0;
-    double theta1_0 = 1.0, theta2_0 = 0.0;
+    double theta1_0 = 2.3, theta2_0 = 0.0;
     run_runge_result(theta1_0, theta2_0);
 
     return 0;
