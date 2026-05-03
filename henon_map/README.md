@@ -10,9 +10,9 @@ y=bx \cdots (2)
 ```
 
 ![./henon_map.gif](./henon_map.gif)
-*Fig.1 エノン写像を10000回写像した結果*
+*Fig.1 エノン写像$`(a,b)=(1.4,0.3)`$を10000回写像した結果*
 ![./henon_map_anim.gif](./henon_map_anim.gif)
-*Fig.2 エノン写像を10000回写像した結果のアニメーション*
+*Fig.2 エノン写像$`(a,b)=(1.4,0.3)`$を10000回写像した結果のアニメーション*
 
 + エノン写像のパラメータ$`a`$を変更した時の分岐図を以下に示す。
 ![./henon_map_bifurcation.gif](./henon_map_bifurcation.gif)
