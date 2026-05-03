@@ -11,7 +11,7 @@
 
 
 ![./sync_phenom.gif](./sync_phenom.gif)
-*Fig.1 同期現象(蔵元モデル)、初期条件は$`\theta_{1}(0)=2.3, \theta_{2}(0)=0.0, \omega = \frac{1}{2}`$である。$`t \rightarrow \infty `$のときに$`\theta_{1}(t)=\theta_{2}(t)=5.0`$となっていることが確認できる。これは同期現象とよばれる。*
+*Fig.1 同期現象(蔵元モデル)、初期条件は$`\theta_{1}(0)=2.3, \theta_{2}(0)=0.0, \omega = \frac{1}{2}`$である。$`t \rightarrow \infty `$のときに$`\theta_{1}(t)=\theta_{2}(t)`$となっていることが確認できる。これは同期現象とよばれる。*
 
 
 
