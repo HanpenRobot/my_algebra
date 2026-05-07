@@ -9,7 +9,7 @@ fig = plt.figure(dpi=256)
 ans_X = []
 ans_Y = []
 
-file_name = "./julia_dump.csv"
+file_name = "./julia_dump2.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -32,14 +32,14 @@ AXIS_LINE_WIDTH = 0.8
 GRID_LINE_WIDTH = 0.8
 
 FIGURE_SIZE = (10, 10)
-Y_AXIS_MAX = 0.5
-Y_AXIS_MIN = -0.5
-X_AXIS_MAX = 1.0
-X_AXIS_MIN = 0.0
+Y_AXIS_MAX = 3.5
+Y_AXIS_MIN = -3.5
+X_AXIS_MAX = 3.0
+X_AXIS_MIN = -3.0
 
 TITLE_FONT_SIZE = 14
 LABEL_FONT_SIZE = 16
-TAIL = 0.1
+TAIL = 1.0
 # plt.cla()
 # 縦横比を1:1に設定
 
@@ -57,4 +57,4 @@ plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
 
 plt.plot(ans_X, ans_Y, "s", ms=1.0, color=RT_LINE_COLOR)
 
-plt.savefig("complex_ans001.png")
+plt.savefig("complex_ans001b.png")

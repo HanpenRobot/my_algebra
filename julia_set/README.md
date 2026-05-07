@@ -7,5 +7,8 @@ z_{n+1}=f(z_n)
 
 ![./complex_ans001.png](./complex_ans001.png)
 
+![./complex_ans001b.png](./complex_ans001b.png)
+
+
 - 参考文献[1] フラクタル 新装版 高安秀樹 朝倉書店 2010年 新装版第1刷, pp.86-87
 
