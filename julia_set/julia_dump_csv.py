@@ -1,21 +1,9 @@
 import csv
-import seaborn as sns
-from io import BytesIO
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from PIL import Image
-from matplotlib.animation import FuncAnimation
 import numpy as np
 import math
 import codecs
 
-import numpy as np
 import pandas as pd
-
-sns.set(style="darkgrid")
-
-FRAMES = 180
-fig = plt.figure(dpi=256)
 
 
 def func(z: complex):
@@ -40,8 +28,9 @@ def check_func(z: complex) -> bool:
 
 
 L = 4
-A = list(np.arange(-L, L, 0.01))
-B = list(np.arange(-L, L, 0.01))
+step_size = 0.005
+A = list(np.arange(-L, L, step_size))
+B = list(np.arange(-L, L, step_size))
 
 results = []
 for a in A:
