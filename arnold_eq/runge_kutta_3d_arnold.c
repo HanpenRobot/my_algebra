@@ -33,7 +33,7 @@ double run_runge_result(double x0, double y0, double z0)
     x = x0;
     y = y0;
     z = z0;
-    FILE *fp = fopen("ans_arnold2.csv", "w");
+    FILE *fp = fopen("ans_arnold.csv", "w");
     fprintf(fp, "t,x,y,z\n");
     for (i = 1; i < max_step; i++)
     {
@@ -67,8 +67,8 @@ double run_runge_result(double x0, double y0, double z0)
 int main(void)
 {
 
-    // double x0 = 3.0, y0 = 0.0, z0 = 3.0; // 軌道がカオス的になる初期値
-    double x0 = 4.2, y0 = 0.0, z0 = 3.0; // 軌道がトーラス状になる初期値
+    double x0 = 3.0, y0 = 0.0, z0 = 3.0; // 軌道がカオス的になる初期値
+    // double x0 = 4.2, y0 = 0.0, z0 = 3.0; // 軌道がトーラス状になる初期値
     run_runge_result(x0, y0, z0);
 
     return 0;

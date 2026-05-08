@@ -11,7 +11,7 @@ sns.set(style="darkgrid")
 ans_X = []
 ans_Y = []
 ans_Z = []
-file_name = "./ans_arnold2.csv"
+file_name = "./ans_arnold.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -48,7 +48,7 @@ FRAMES = 180
 FRAMES = 180
 images = [create_frame(angle) for angle in range(FRAMES)]
 images[0].save(
-    "./arnold_plot2.gif",
+    "./arnold_plot.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
