@@ -12,7 +12,7 @@ FRAMES = 180
 ans_X = []
 ans_Y = []
 ans_Z = []
-file_name = "./ans_arnold.csv"
+file_name = "./ans_arnold2.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -50,7 +50,7 @@ def create_frame(angle: int):
 
 images = [create_frame(angle) for angle in range(FRAMES)]
 images[0].save(
-    "./arnold_plot_anim.gif",
+    "./arnold_plot_anim2.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,

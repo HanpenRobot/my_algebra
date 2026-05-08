@@ -27,13 +27,13 @@ double run_runge_result(double x0, double y0, double z0)
     double x, k1, k2, k3, k4, k;
     double y, l1, l2, l3, l4, l;
     double z, m1, m2, m3, m4, m;
-    int max_step = 400000;
+    int max_step = 800000;
     double A = 1.0, B = 0.5, C = 0.3;
 
     x = x0;
     y = y0;
     z = z0;
-    FILE *fp = fopen("ans_arnold.csv", "w");
+    FILE *fp = fopen("ans_arnold2.csv", "w");
     fprintf(fp, "t,x,y,z\n");
     for (i = 1; i < max_step; i++)
     {
@@ -67,7 +67,8 @@ double run_runge_result(double x0, double y0, double z0)
 int main(void)
 {
 
-    double x0 = 3.0, y0 = 0.0, z0 = 3.0; // 起動がカオス的になる初期値
+    // double x0 = 3.0, y0 = 0.0, z0 = 3.0; // 軌道がカオス的になる初期値
+    double x0 = 4.2, y0 = 0.0, z0 = 3.0; // 軌道がトーラス状になる初期値
     run_runge_result(x0, y0, z0);
 
     return 0;
