@@ -16,7 +16,7 @@ double run_runge_result(double v0, double x0)
     double h = 0.0005; // step_size
     double x, v, k1, k2, k3, k4, k;
 
-    double epsilon = 3.5;
+    double epsilon = 0.05;
     int max_step = 500000;
 
     x = x0;
