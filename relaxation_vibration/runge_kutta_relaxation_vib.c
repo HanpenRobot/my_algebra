@@ -4,8 +4,10 @@
 
 double func1(double epsilon, double v, double x)
 {
-    double tmp_value = epsilon * (v - (pow(v, 3) / 3.0));
-    return (tmp_value - x) / v;
+    // double tmp_value = epsilon * (v - (pow(v, 3) / 3.0));
+    // return (tmp_value - x) / v;
+    double tmp_value = (epsilon * v - x) / v;
+    return tmp_value;
 }
 
 double run_runge_result(double v0, double x0)
