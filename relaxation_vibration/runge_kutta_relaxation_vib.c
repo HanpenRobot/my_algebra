@@ -4,10 +4,8 @@
 
 double func1(double epsilon, double v, double x)
 {
-    // double tmp_value = epsilon * (v - (pow(v, 3) / 3.0));
-    // return (tmp_value - x) / v;
-    double tmp_value = (epsilon * v - x) / v;
-    return tmp_value;
+    double tmp_value = epsilon * (v - (pow(v, 3) / 3.0));
+    return (tmp_value - x) / v; // v=9に特異点を持つので、そこでrunge kutta法の数値積分が発散してinfとかになっている???
 }
 
 double run_runge_result(double v0, double x0)
@@ -18,7 +16,7 @@ double run_runge_result(double v0, double x0)
     double h = 0.0005; // step_size
     double x, v, k1, k2, k3, k4, k;
 
-    double epsilon = 0.5;
+    double epsilon = 3.5;
     int max_step = 500000;
 
     x = x0;
@@ -42,7 +40,7 @@ double run_runge_result(double v0, double x0)
 int main(void)
 {
 
-    double v0 = 0.3, x0 = 0.2;
+    double v0 = 10.3, x0 = 1.2;
     run_runge_result(v0, x0);
 
     return 0;

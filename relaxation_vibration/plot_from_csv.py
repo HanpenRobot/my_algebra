@@ -43,16 +43,16 @@ def draw(n: int):
     GRID_LINE_WIDTH = 0.8
 
     FIGURE_SIZE = (10, 10)
-    Y_AXIS_MAX = 3.5
-    Y_AXIS_MIN = -3.5
-    X_AXIS_MAX = 5.5
-    X_AXIS_MIN = 0.0
+    Y_AXIS_MAX = 10.5
+    Y_AXIS_MIN = -10.5
+    X_AXIS_MAX = 22.5
+    X_AXIS_MIN = -1.0
 
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
     plt.cla()
     plt.xlabel(r"$x$", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(r"$y$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(r"$v$", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
     # plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
