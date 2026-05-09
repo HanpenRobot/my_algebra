@@ -5,7 +5,7 @@
 double func1(double epsilon, double v, double x)
 {
     double tmp_value = epsilon * (v - (pow(v, 3) / 3.0));
-    return (tmp_value - x) / v; // v=9に特異点を持つので、そこでrunge kutta法の数値積分が発散してinfとかになっている???
+    return (tmp_value - x) / v; // v=0に特異点を持つので、そこでrunge kutta法の数値積分が発散してinfとかになっている???
 }
 
 double run_runge_result(double v0, double x0)
