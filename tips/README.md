@@ -17,5 +17,8 @@ imagemagickを使うとgifファイルを連結して保存できる。
 apt-cyg install opengl freeglut-devel gcc-g++ make
 ```
 
+というより
+setup-2.926.x86_64.exeからglutをインストールする??
+
 - 参考文献[1] C#で学ぶ偏微分方程式の数値解法 CAEプログラミング入門 平瀬創也 東京電機大学出版局 2009年 第1版1刷発行, pp.162-163 (付録D アニメーションの作り方)
 
