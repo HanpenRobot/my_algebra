@@ -11,7 +11,7 @@ double func1(double x, double y)
 double func2(double x, double y)
 {
     double epsilon = 6.5;
-    return -x + epsilon * y - (epsilon * pow(y, 3)) / 3.0;
+    return -x + y - (epsilon * pow(y, 3)) / 3.0;
 }
 
 // d^2 x/ dt ^2 =
