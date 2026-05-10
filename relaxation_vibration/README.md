@@ -11,10 +11,10 @@
 + ルンゲ・クッタ法のコードは[./runge_kutta_relaxation_vib.c](./runge_kutta_relaxation_vib.c)である。ルンゲ・クッタ法は参考文献[2]を参考に実装した。
 
 ![./relax_map_v_t.gif](./relax_map_v_t.gif)
-*Fig.1 弛緩振動のプロット$`v(t)`$*
+*Fig.1 弛緩振動の$`v(t)`$のプロット*
 
 ![./relax_map_v_x.gif](./relax_map_x_t.gif)
-*Fig.2 弛緩振動のプロット$`x(t)`$*
+*Fig.2 弛緩振動の$`x(t)`$のプロット*
 
 ![./relax_map_x_v.gif](./relax_map_x_v.gif)
 *Fig.3 弛緩振動の$`(x(t),v(t))`$を位相平面上でプロット*
