@@ -21,14 +21,17 @@
 
 
 ![./relax_map_v_t_anim.gif](./relax_map_v_t_anim.gif)
+
 *Fig.4 弛緩振動の$`v(t)`$のアニメーション*
 
 
 ![./relax_map_v_x_anim.gif](./relax_map_x_t_anim.gif)
+
 *Fig.5 弛緩振動の$`x(t)`$のアニメーション*
 
 
 ![./relax_map_x_v_anim.gif](./relax_map_x_v_anim.gif)
+
 *Fig.6 弛緩振動の$`(x(t),v(t))`$を位相平面上でアニメーション*
 
 
