@@ -4,7 +4,7 @@
 
 + Logistic 写像
 ```math
-x_{n+1}=f(x_{n})=4x_{n}+(1-x_{n}) \cdots (1)
+x_{n+1}=f(x_{n})=4x_{n}(1-x_{n}) \cdots (1)
 ```
 の初期値鋭敏性を解析解
 ```math
