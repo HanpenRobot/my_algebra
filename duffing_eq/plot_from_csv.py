@@ -45,10 +45,10 @@ def draw(n: int):
     GRID_LINE_WIDTH = 0.8
 
     FIGURE_SIZE = (10, 10)
-    Y_AXIS_MAX = 0.5
-    Y_AXIS_MIN = 0.0
-    X_AXIS_MAX = 30
-    X_AXIS_MIN = -30
+    Y_AXIS_MAX = 5
+    Y_AXIS_MIN = -0
+    X_AXIS_MAX = 12
+    X_AXIS_MIN = -12
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
     plt.cla()
