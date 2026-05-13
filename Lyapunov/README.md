@@ -46,7 +46,7 @@ x_{n}=\sin ^{2} \left(2^n \arcsin\left(\sqrt{x_{0}}\right) \right) \cdots (2)
 
 ![./logistic_invariant_dist.png](./logistic_invariant_dist.png)
 
-*Fig. 3 Logistic 写像の不変分布$`\rho(x),(n=10^6)`$*
+*Fig. 3 Logistic 写像の不変分布$`\rho(x)`$を数値計算で求めた結果*
 
 - 参考文献[1] 中川 匡弘 (著), カオス・フラクタル感性情報工学 日刊工業新聞社，2010年
 
