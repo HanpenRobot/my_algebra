@@ -35,6 +35,19 @@ x_{n}=\sin ^{2} \left(2^n \arcsin\left(\sqrt{x_{0}}\right) \right) \cdots (2)
 ![./lyapunov_plot.png](./lyapunov_plot.png)
 *Fig. 2 Logistic 写像の Lyapunov 指数𝜆の収束過程*
 
+
+## Logistic 写像の不変分布 $`\rho`$
++ Logistic 写像 $`(1)`$の不変分布 $`\rho(x)`$を$`(4)`$で定義する。
+```math
+\rho(x) = \lim_{T\to\infty} \frac{1}{T} \sum^{T-1}_{n=0}{\delta(x-x_n)  }\cdots (4)
+```
++ $`\rho(x)`$を数値計算でもとめる。$`\rho(x)`$は適当な初期値$`x_0`$から$`x_{n+1}=f(x_{n})`$を$`n=10^6`$まで計算し、その値のヒストグラムを正規化することで求めた。
++ Fig. 3 のグラフの作成に使用したPythonプログラムは[./logistic_invariant_dist.py](./logistic_invariant_dist.py)である。
+
+![./logistic_invariant_dist.png](./logistic_invariant_dist.png)
+
+*Fig. 3 Logistic 写像の不変分布$`\rho(x),(n=10^6)`$*
+
 - 参考文献[1] 中川 匡弘 (著), カオス・フラクタル感性情報工学 日刊工業新聞社，2010年
 
 
