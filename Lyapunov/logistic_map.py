@@ -15,20 +15,27 @@ n = 50
 x0 = 0.10001
 x1 = 0.1
 
+
+def func(x: int):
+    return 4.0 * x * (1.0 - x)
+
+
 x = x1
+x2 = x0
 X = []
 Y = []
 Y2 = []
 for k in range(n):
     X.append(k)
-    x = 4.0 * x * (1.0 - x)
+    x = func(x)
+    x2 = func(x2)
     Y.append(x)
-    Y2.append(np.sin((2.0 ** (k + 1)) * np.arcsin(np.sqrt(x0))) ** 2)
+    Y2.append(x2)
 GRID_COLOR = "#444444"
 GRID_LINE_WIDTH = 0.8
 plt.ylim(-0.5, 1.5)
-plt.plot(X, Y2, "-o", label=r"Exact solution (init. $x_0$=%.1f)" % x1)
-plt.plot(X, Y, "-v", label=r"Numerical solution (init.  $x_0$=%.5f)" % x0)
+plt.plot(X, Y2, "-o", label=r"$x_0$=%.5f" % x1, color="#0000FF")
+plt.plot(X, Y, "-v", label=r"$x_0$=%.5f" % x0, color="#00AA00")
 plt.legend()
 plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
 plt.xlabel(r"$n$")
@@ -36,4 +43,4 @@ plt.ylabel(r"$x_{n}$")
 plt.rcParams["font.size"] = 23
 
 # plt.show()
-plt.savefig("logistic_exact_vs_numerical.png")
+plt.savefig("logistic_plot.png")
