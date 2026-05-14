@@ -23,6 +23,7 @@ x_{n+1}=T(x_n) =
 
 
 ![./tent_invariant_dist.png](./tent_invariant_dist.png)
+
 *Fig. 4 テント写像の不変分布の数値計算結果, 分布はほぼ一様分布になっている*
 
 - 参考文献 力学系入門 原著第3版 微分方程式からカオスまで Morris W.Hirsch , Stephen Smale , Robert L.Devaney , 桐木 紳 訳, 三波 篤郎 訳, 谷川 清隆 訳, 辻井 正人 訳 共立出版 2017年 原著第3版第1刷, p. 349
