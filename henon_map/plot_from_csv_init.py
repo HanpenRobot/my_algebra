@@ -51,8 +51,9 @@ def draw(n: int):
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
     plt.cla()
-    plt.xlabel(r"$x$", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(r"$y$", fontsize=LABEL_FONT_SIZE)
+    N_max = 900
+    plt.xlabel(rf"$x_n$, $(n > {N_max})$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(rf"$y_n$, $(n > {N_max})$", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
     # plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
