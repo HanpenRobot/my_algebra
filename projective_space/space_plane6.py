@@ -101,12 +101,7 @@ def create_frame(angle: int):
     # r"$(X,Y,Z)=(t,t^2,1)$"
     # r"$(X,Y,Z)=(\frac{t}{\sqrt{3}},\frac{t}{\sqrt{3}}^2,3)$"
     scale_value = 3
-    tmp_X2 = [-(tmp_value / np.sqrt(scale_value)), (tmp_value / np.sqrt(scale_value))]
-    tmp_Y2 = [
-        -((tmp_value / np.sqrt(scale_value)) ** 2),
-        (tmp_value / np.sqrt(scale_value)) ** 2,
-    ]
-    tmp_Z2 = [-scale_value * 1, scale_value * 1]
+
     # y=x^2
     # (Y/Z)=(X/Z)^2
     # Y/Z = X^2 / Z^2
@@ -120,14 +115,27 @@ def create_frame(angle: int):
     # Z=1 -> Y=X^2
     # Z=3 -> 3Y=X^2 -> Y = ( X/sqrt(3) )^2
 
-    TMP_ARRY3 = np.linspace(-L, L, 20 * L + 1)
+    TMP_ARRY3 = np.linspace(
+        -int(np.sqrt(scale_value) * L),
+        int(np.sqrt(scale_value) * L),
+        20 * int(np.sqrt(scale_value) * L) + 1,
+    )
     TMP_ARRY3 = TMP_ARRY3 / np.sqrt(scale_value)
     # 放物線の値を生成 Z=1 -> Y=X^2
     graph_xA = TMP_ARRY3
     graph_yA = TMP_ARRY3**2
     graph_zA = TMP_ARRY3 * 0 + scale_value
     sc = ax.plot(graph_xA, graph_yA, graph_zA, linewidth=3, c="#0000FF", marker=None)
-
+    tmp_value = TMP_ARRY3[num]
+    # tmp_X2 = [-(tmp_value / np.sqrt(scale_value)), (tmp_value / np.sqrt(scale_value))]
+    # tmp_Y2 = [
+    #     -((tmp_value / np.sqrt(scale_value)) ** 2),
+    #     (tmp_value / np.sqrt(scale_value)) ** 2,
+    # ]
+    # tmp_Z2 = [-scale_value * 1, scale_value * 1]
+    tmp_X2 = [-graph_xA[num], graph_xA[num]]
+    tmp_Y2 = [-graph_yA[num], graph_yA[num]]
+    tmp_Z2 = [-graph_zA[num], graph_zA[num]]
     sc = ax.plot(
         tmp_X2,
         tmp_Y2,
