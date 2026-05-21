@@ -98,6 +98,8 @@ def create_frame(angle: int):
         label=r"$(X,Y,Z)=(t,t^2,1)$",
         marker="o",
     )
+    # r"$(X,Y,Z)=(t,t^2,1)$"
+    # r"$(X,Y,Z)=(\frac{t}{\sqrt{3}},\frac{t}{\sqrt{3}}^2,3)$"
     scale_value = 3
     tmp_X2 = [-(tmp_value / np.sqrt(scale_value)), (tmp_value / np.sqrt(scale_value))]
     tmp_Y2 = [
@@ -132,7 +134,7 @@ def create_frame(angle: int):
         tmp_Z2,
         markersize=12,
         c="#0000AA",
-        label=r"$test$",
+        label=r"$(X,Y,Z)=(\frac{t}{\sqrt{3}},\left(\frac{t}{\sqrt{3}}\right)^2,3)$",
         marker="o",
     )
     # sc = ax.plot(
@@ -225,7 +227,7 @@ def create_frame(angle: int):
     ax.tick_params(labelsize=18)
 
     ax.set_title(rf"$ZY=X^2$", fontsize=30, loc="center")
-    plt.legend(loc="upper left", borderaxespad=1, fontsize=18)
+    plt.legend(loc="best", borderaxespad=1, fontsize=18)
     plt.close()
 
     buf = BytesIO()
