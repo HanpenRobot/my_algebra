@@ -16,7 +16,7 @@ $`x=\frac{X}{Z}`$、$`y=\frac{Y}{Z}`$と変数変換すると、
 ![./tmp_plane5.gif](./tmp_plane5.gif)
 *Fig. 1 $`ZY=X^2`$を平面$`Z=1`$, 平面$`Y=1`$, 平面$`X=1`$に射影した結果*
 
-
+Fig. 1は[./space_plane5.py](./space_plane5.py)のコードで作成した。
 
 
 
