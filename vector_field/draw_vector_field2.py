@@ -31,9 +31,9 @@ def complex_func(z: complex):
 def draw(t: int):
     print(f"plotting {t=} ...")
     plt.cla()
-    plt.title(f"Vector field $W=Z^2-1$", fontsize=TITLE_FONT_SIZE)
-    plt.xlabel("Real part", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel("Imaginary part", fontsize=LABEL_FONT_SIZE)
+    plt.title(f"Vector field $w=z^3-1$", fontsize=TITLE_FONT_SIZE)
+    plt.xlabel(f"$\Re w$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(f"$\Im w$", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
