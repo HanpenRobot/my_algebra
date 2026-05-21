@@ -9,8 +9,7 @@ import numpy as np
 sns.set(style="darkgrid")
 
 
-def create_frame():
-    angle = 1
+def create_frame(angle: int):
     print(f"{angle=}")
 
     fig = plt.figure(figsize=(12, 12))
@@ -21,10 +20,10 @@ def create_frame():
     x = TMP_ARRY
     y = TMP_ARRY
     X, Y = np.meshgrid(x, y)
-    ax.plot_surface(X, Y, Z=X * 0 + 1.0, color="#00AA00", alpha=0.3)
-    ax.plot_surface(X, Y=X * 0 + 1.0, Z=Y, color="y", alpha=0.3)
+    # ax.plot_surface(X, Y, Z=X * 0 + 1.0, color="#00AA00", alpha=0.3)
+    # ax.plot_surface(X, Y=X * 0 + 1.0, Z=Y, color="y", alpha=0.3)
 
-    ax.plot_surface(X=X * 0 + 1.0, Y=Y, Z=X, color="r", alpha=0.3)
+    # ax.plot_surface(X=X * 0 + 1.0, Y=Y, Z=X, color="r", alpha=0.3)
 
     # 矢幅・矢長比・矢頭長比を指定
     lw = 3
@@ -37,7 +36,7 @@ def create_frame():
         0,
         0,
         0,
-        4,
+        5,
         length=l,
         arrow_length_ratio=alr,
         color="#000000",
@@ -49,7 +48,7 @@ def create_frame():
         0,
         0,
         0,
-        3,
+        5,
         0,
         length=l,
         arrow_length_ratio=alr,
@@ -61,7 +60,7 @@ def create_frame():
         0,
         0,
         0,
-        3,
+        5,
         0,
         0,
         length=l,
@@ -84,12 +83,14 @@ def create_frame():
     graph_y = TMP_ARRY2**2
     graph_z = TMP_ARRY2 * 0 + 1.0
     tmp_value = TMP_ARRY2[num]
-    sc = ax.plot(graph_x, graph_y, graph_z, c="#FF0000", marker=None)
+    sc = ax.plot(graph_x, graph_y, graph_z, linewidth=3, c="#FF0000", marker=None)
     sc = ax.plot(
         tmp_value,
         tmp_value**2,
         1.0,
+        markersize=12,
         c="#FF0000",
+        label=r"$(X,Y,Z)=(t,t^2,1)$",
         marker="o",
     )
 
@@ -97,42 +98,48 @@ def create_frame():
     graph_x2 = TMP_ARRY2
     graph_y2 = TMP_ARRY2 * 0 + 1.0
     graph_z2 = TMP_ARRY2**2
-    sc = ax.plot(graph_x2, graph_y2, graph_z2, c="#00AA00", marker=None)
+    sc = ax.plot(graph_x2, graph_y2, graph_z2, linewidth=3, c="#00AA00", marker=None)
     sc = ax.plot(
-        tmp_value,
+        1.0 / tmp_value,
         1.0,
-        tmp_value**2,
+        1.0 / (tmp_value**2),
+        label=r"$(X,Y,Z)=(t,1,t^2)$",
+        markersize=12,
         c="#00AA00",
         marker="o",
     )
 
+    TMP_ARRY3 = np.linspace(-2 * L, 2 * L, 40 * L + 1)
     # 放物線の値を生成 X=1 -> ZY=1 -> Y = 1/Z
-    graph_x3 = TMP_ARRY2 * 0 + 1.0
-    graph_y3 = 1 / TMP_ARRY2
-    graph_z3 = TMP_ARRY2
-    sc = ax.plot(graph_x3, graph_y3, graph_z3, c="#0000FF", marker=None)
+    graph_x3 = TMP_ARRY3 * 0 + 1.0
+    graph_y3 = 1 / TMP_ARRY3
+    graph_z3 = TMP_ARRY3
+    sc = ax.plot(graph_x3, graph_y3, graph_z3, linewidth=3, c="#0000FF", marker=None)
     sc = ax.plot(
         1.0,
-        1.0 / tmp_value,
         tmp_value,
+        1.0 / tmp_value,
         c="#0000FF",
+        label=r"$(X,Y,Z)=(1,\frac{1}{t},t)$",
+        markersize=12,
         marker="o",
     )
 
-    alpha = 2.0
+    alpha = 5.0
+    line_length = 2
+    tmp_value2 = tmp_value
     ax.quiver(  # 原点を通る直線
         0,
         0,
         0,
-        tmp_value,
-        tmp_value**2,
+        tmp_value2,
+        (tmp_value2**2),
         1.0,
         length=alpha * 1,
-        arrow_length_ratio=alr,
         color="#AA0000",
         linewidth=lw,
     )
-    ax.quiver(  # Z軸の矢印
+    ax.quiver(  # 原点を通る直線
         0,
         0,
         0,
@@ -145,12 +152,12 @@ def create_frame():
         linewidth=lw,
     )
 
-    ax.view_init(30, 60)
+    ax.view_init(35, 45)
 
     ax.set(
         xlim=(-L, L),
         ylim=(-L, L),
-        zlim=(0, 5.0),
+        zlim=(-L, L),
         xticks=TMP_ARRY,
         yticks=TMP_ARRY,
     )
@@ -158,35 +165,24 @@ def create_frame():
     ax.set_xlabel("X-axis", fontsize=22)
     ax.set_ylabel("Y-axis", fontsize=22)
     ax.set_zlabel("Z-axis", fontsize=22)
-    ax.tick_params(labelsize=22)
+    ax.tick_params(labelsize=18)
 
     ax.set_title(rf"$ZY=X^2$", fontsize=30, loc="center")
-    plt.show()
-    # plt.close()
+    plt.legend(loc="upper left", borderaxespad=1, fontsize=18)
+    plt.close()
 
-    # buf = BytesIO()
-    # fig.savefig(buf)
-    # return Image.open(buf)
+    buf = BytesIO()
+    fig.savefig(buf)
+    return Image.open(buf)
 
 
-create_frame()
-# FRAMES = 2
-# # FRAMES = 180
-
-# FRAMES = 20 * 3 - 3
-# images = [create_frame(angle) for angle in range(FRAMES)]
-# images[0].save(
-#     "./tmp_plane3.gif",
-#     save_all=True,
-#     append_images=images[1:],
-#     duration=100,
-#     loop=0,
-# )
-
-# y=x^2
-# (Y/Z)=(X/Z)^2
-# Y/Z = X^2 / Z^2
-# ZY=X^2
-# Z=1 -> Y=X^2
-# Y=1 -> Z=X^2
-# X=1 -> ZY=1 -> Y = 1/Z
+FRAMES = 2
+FRAMES = 20 * 3
+images = [create_frame(angle) for angle in range(FRAMES)]
+images[0].save(
+    "./tmp_plane5.gif",
+    save_all=True,
+    append_images=images[1:],
+    duration=100,
+    loop=0,
+)
