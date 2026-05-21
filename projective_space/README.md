@@ -12,11 +12,26 @@ $`x=\frac{X}{Z}`$、$`y=\frac{Y}{Z}`$と変数変換すると、
 ```
 
 となり$`y=x^2`$は$`ZY=X^2`$として3次元の実空間$`\mathbb{R}^{3}=\{(X,Y,Z) | X,Y,Z \in \mathbb{R} \}`$に埋め込むことができる。
+
 さて、$`(3)`$は2次の同次式である
 > [!NOTE]
 > $`ZY=X^2`$の左辺$`ZY`$の次数は2, 右辺$`X^2`$の次数は2なので2次の同次式である。
 >
 
+このため、$`X^{\prime}=\alpha X, Y^{\prime}=\alpha Y, Z^{\prime}=\alpha Z`$のように各変数を$`\alpha \in \mathbb{R}`$でスカラー倍しても
+```math
+\therefore Z^{\prime}Y^{\prime}={X^{\prime}}^2 \cdots (4)
+```
+```math
+\left(\alpha Z \alpha Y\right)=\left(\alpha X\right)^{2} \cdots (5)
+```
+```math
+\therefore \alpha^{2} ZY=\alpha^{2} X^{2} \cdots (6)
+```
+元の式$`(3)`$になることがわかる。このため、3次元曲線
+```math
+V(ZY-X^2) = \{ (X,Y,Z) | ZY-X^2=0 \} = \{ (X,Y,Z) | ZY=X^2 \} \cdots (7)
+```
 
 ![./tmp_plane5.gif](./tmp_plane5.gif)
 *Fig. 1 $`ZY=X^2`$を平面$`Z=1`$, 平面$`Y=1`$, 平面$`X=1`$に射影した結果*
