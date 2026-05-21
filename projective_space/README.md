@@ -20,7 +20,7 @@ $`x=\frac{X}{Z}`$、$`y=\frac{Y}{Z}`$と変数変換すると、
 
 このため、$`X^{\prime}=\alpha X, Y^{\prime}=\alpha Y, Z^{\prime}=\alpha Z`$のように各変数を$`\alpha \in \mathbb{R}`$でスカラー倍しても
 ```math
-\therefore Z^{\prime}Y^{\prime}={X^{\prime}}^2 \cdots (4)
+Z^{\prime}Y^{\prime}={X^{\prime}}^2 \cdots (4)
 ```
 ```math
 \left(\alpha Z \alpha Y\right)=\left(\alpha X\right)^{2} \cdots (5)
