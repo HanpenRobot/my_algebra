@@ -28,10 +28,11 @@ Z^{\prime}Y^{\prime}={X^{\prime}}^2 \cdots (4)
 ```math
 \therefore \alpha^{2} ZY=\alpha^{2} X^{2} \cdots (6)
 ```
-元の式$`(3)`$になることがわかる。このため、3次元曲線
+元の式$`(3)`$になることがわかる。このため、3次元空間で$`ZY=X^2`$を満たす点の集合
 ```math
 V(ZY-X^2) = \{ (X,Y,Z) | ZY-X^2=0 \} = \{ (X,Y,Z) | ZY=X^2 \} \cdots (7)
 ```
+をプロットすると、
 
 ![./tmp_plane5.gif](./tmp_plane5.gif)
 *Fig. 1 $`ZY=X^2`$を平面$`Z=1`$, 平面$`Y=1`$, 平面$`X=1`$に射影した結果*
