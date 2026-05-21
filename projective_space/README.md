@@ -39,9 +39,9 @@ V(ZY-X^2) = \{ (X,Y,Z) | ZY-X^2=0 \} = \{ (X,Y,Z) | ZY=X^2 \} \cdots (7)
 
 Fig. 1は[./space_plane5.py](./space_plane5.py)のコードで作成した。
 
-
-
-
+![./tmp_plane6.gif](./tmp_plane6.gif)
+*Fig.2 射影平面上の放物線*
+Fig. 2は[./space_plane6.py](./space_plane6.py)のコードで作成した。
 
 - 参考文献[1] 基礎数学5 多様体の基礎 松本幸夫 東京大学出版会 2011年 第23刷 ,pp. 128-130
 - 参考文献[2] 平面代数曲線のはなし 今野一宏 内田老鶴圃 2017年 第1版, pp. 5-7
