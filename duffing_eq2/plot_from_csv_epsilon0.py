@@ -42,6 +42,7 @@ with open(file_name, encoding="UTF-8") as f:
 
 def create_frame(num: int):
     print(f"frame_num: {num=}")
+    plt.axes().set_aspect("equal")
     plt.cla()
 
     plt.xlabel(r"$x$", fontsize=LABEL_FONT_SIZE)
@@ -50,12 +51,12 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(-5, 5)
-    plt.ylim(-10, 10)
+    plt.xlim(-5, 25)
+    plt.ylim(-20, 20)
 
     # Duffing方程式の解曲線をプロット
     plt.plot(ans_X, ans_Y, color=X1_LINE_COLOR, linewidth=1)
-    plt.title(rf"$\varepsilon = 0$", fontsize=30, loc="center")
+    # plt.title(rf"$\varepsilon = 0$", fontsize=30, loc="center")
     plt.close()
 
     buf = BytesIO()
