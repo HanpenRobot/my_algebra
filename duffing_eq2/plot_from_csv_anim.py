@@ -86,9 +86,9 @@ def create_frame(num: int):
         ans_X[:pos],
         ans_Y[:pos],
         color=X1_LINE_COLOR,
-        markersize=1,
-        marker="s",
-        linestyle="None",
+        # markersize=1,
+        # marker="s",
+        # linestyle="None",
     )
 
     # plt.close()
