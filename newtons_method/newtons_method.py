@@ -78,7 +78,7 @@ def draw(frame_num: int):
             linestyle="-.",
         )
     plt.title(
-        rf"Newton's method for $2^{{\frac{{1}}{{3}}}}$ ($x_{{{frame_num}}}$={x_res:.9f})",
+        rf"Newton's method for $2^{{\frac{{1}}{{3}}}}$ ($x_{{{frame_num}}}$={x_res:.11f})",
         fontsize=TITLE_FONT_SIZE,
     )
 
