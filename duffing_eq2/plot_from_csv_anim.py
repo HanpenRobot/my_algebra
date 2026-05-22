@@ -41,9 +41,9 @@ with open(file_name, encoding="UTF-8") as f:
             ans_Y.append(float(line[2]))
         num += 1
 
-FRAMES = 180
-step_size = int(len(ans_X) / FRAMES)
-FRAMES -= 1
+FRAMES = 360
+# step_size = int(len(ans_X) / FRAMES)
+# FRAMES -= 1
 
 
 def create_frame(num: int):
@@ -82,7 +82,14 @@ def create_frame(num: int):
     #             break
 
     # Duffing方程式の解曲線をプロット
-    plt.plot(ans_X[:pos], ans_Y[:pos], color=X1_LINE_COLOR, linewidth=1)
+    plt.plot(
+        ans_X[:pos],
+        ans_Y[:pos],
+        color=X1_LINE_COLOR,
+        markersize=1,
+        marker="s",
+        linestyle="None",
+    )
 
     # plt.close()
 
