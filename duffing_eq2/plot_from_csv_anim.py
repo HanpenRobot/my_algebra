@@ -34,13 +34,14 @@ with open(file_name, encoding="UTF-8") as f:
     num = 0
     for line in reader:
         # if num > 0 and num % 500 == 0:
-        if num > 0:
+        # if num > 0:
+        if num > 0 and num % 50 == 0:
             ans_T.append(float(line[0]))
             ans_X.append(float(line[1]))
             ans_Y.append(float(line[2]))
         num += 1
 
-FRAMES = 100
+FRAMES = 180
 step_size = int(len(ans_X) / FRAMES)
 FRAMES -= 1
 
@@ -57,8 +58,11 @@ def create_frame(num: int):
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.xlim(-5, 5)
     plt.ylim(-10, 10)
-    pos = (num - 1) * step_size
-    pos2 = num * step_size
+    step_size = len(ans_X) / FRAMES
+    pos = int(step_size * num)
+    # pos = num
+    # pos = (num - 1) * step_size
+    # pos2 = num * step_size
     print(f"frame_num: {num=},{step_size=}, {pos=}***")
     # ans_T = []
     # ans_X = []
