@@ -11,12 +11,12 @@ double func1(double y)
 double func2(double x, double y, double const_k, double B, double t)
 {
 
-    return -const_k * const_k - pow(x, 3) + B * cos(t);
+    return -const_k * y - pow(x, 3) + B * cos(t);
 }
 
 double run_runge_result(double x0, double y0)
 {
-    // 4次のルンゲ・クッタ法でArnold方程式を解く
+    // 4次のルンゲ・クッタ法でDuffing方程式を解く
     int i;
     double t = 0.0;
     double h = 0.0005; // step_size

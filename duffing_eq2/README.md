@@ -6,7 +6,7 @@
 ![./duffing_plot.gif](./duffing_plot.gif)
 *Fig.1 Duffing方程式を4次のルンゲ・クッタ法で解いた結果*
 
-![./duffing_plot_anim.gif](./duffing_plot_anim.gif)
+![./duffing_plot_anim2.gif](./duffing_plot_anim2.gif)
 *Fig.1 Duffing方程式を4次のルンゲ・クッタ法で解いた結果のアニメーション*
 
 
