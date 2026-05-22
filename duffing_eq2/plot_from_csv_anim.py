@@ -33,7 +33,7 @@ with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
     for line in reader:
-        if num > 0:
+        if num > 0 and num % 500 == 0:
             ans_T.append(float(line[0]))
             ans_X.append(float(line[1]))
             ans_Y.append(float(line[2]))
@@ -92,7 +92,7 @@ def create_frame(num: int):
 
 images = [create_frame(angle) for angle in range(2, FRAMES)]
 images[0].save(
-    "./duffing_plot_anim.gif",
+    "./duffing_plot_anim2.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
