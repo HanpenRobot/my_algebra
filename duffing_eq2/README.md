@@ -3,7 +3,7 @@
 + 微分方程式を解く際に使用したルンゲ・クッタ法のコードは[./runge_kutta_duffing_eq.c](./runge_kutta_duffing_eq.c)である。 (このコードは参考文献[2]のコードを参考に実装した)。
 
 
-![./duffing_plot](./duffing_plot)
+![./duffing_plot.gif](./duffing_plot.gif)
 *Fig.1 Duffing方程式を4次のルンゲ・クッタ法で解いた結果*
 
 
