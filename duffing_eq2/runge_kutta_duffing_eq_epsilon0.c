@@ -56,7 +56,8 @@ double run_runge_result(double x0, double y0)
 int main(void)
 {
 
-    double x0 = 3.0, y0 = 1.0; // Duffingの方程式の初期値
+    // double x0 = 3.0, y0 = 1.0; // Duffingの方程式の初期値
+    double x0 = -3.0, y0 = 1.0; // Duffingの方程式の初期値
     run_runge_result(x0, y0);
 
     return 0;

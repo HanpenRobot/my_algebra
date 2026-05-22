@@ -51,7 +51,7 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(-5, 25)
+    plt.xlim(-20, 20)
     plt.ylim(-20, 20)
 
     # Duffing方程式の解曲線をプロット
@@ -69,7 +69,7 @@ FRAMES = 180
 FRAMES = 2
 images = [create_frame(angle) for angle in range(FRAMES)]
 images[0].save(
-    "./duffing_plot_epsilon0.gif",
+    "./duffing_plot_epsilon0B.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
