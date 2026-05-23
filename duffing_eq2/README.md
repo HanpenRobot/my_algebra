@@ -1,6 +1,15 @@
 # Duffing方程式を4次のルンゲ・クッタ法で解いた結果
 
++ Duffing方程式を$`(1)`$,$`(2)`$で定義する。
 + 微分方程式を解く際に使用したルンゲ・クッタ法のコードは[./runge_kutta_duffing_eq.c](./runge_kutta_duffing_eq.c)である。 (このコードは参考文献[2]のコードを参考に実装した)。
+
+```math
+\frac{dx}{dt}=y \cdots (1)
+```
+
+```math
+\frac{dy}{dt}=-ky-x^3+B\cos(t) \cdots (2)
+```
 
 
 ![./duffing_plot.gif](./duffing_plot.gif)
