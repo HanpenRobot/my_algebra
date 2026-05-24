@@ -18,6 +18,10 @@
 ![./vec_field_lotka_volterra_anim.gif](./vec_field_lotka_volterra_anim.gif)
 *Fig. 2 Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果のアニメーション*
 
+![./vec_field_lotka_volterra_anim2.gif](./vec_field_lotka_volterra_anim2.gif)
+*Fig. 3 平衡点をもつ場合のLotka-Volterra方程式のアニメーション*
+
+
 - 参考文献[1] 常微分方程式 基礎から応用へ 新装版 俣野博 岩波書店 2026年 新装版第1刷発行, pp. 110-112
 - 参考文献[2] C言語による数値計算入門 第2版 新装版 堀之内 總一・酒井幸吉・榎園茂 森北出版株式会社 2015年 第2版装版第1刷発行, pp.128-129
 - 参考文献[3] 改定増補 カオス力学の基礎 早間 慧 現代数学社 2002年 改訂第2版, pp. 66-67

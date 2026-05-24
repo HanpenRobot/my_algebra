@@ -34,7 +34,8 @@ ans_eq_num = []
 results = []
 
 
-file_name = "./ans_lotka_volterra_eq.csv"
+# file_name = "./ans_lotka_volterra_eq.csv"
+file_name = "./ans_lotka_volterra_eq2.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -61,7 +62,7 @@ with open(file_name, encoding="UTF-8") as f:
 df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = max(df["eq_num"].to_list())
-FRAMES = 20  # int(max_frame_num / 5)
+FRAMES = 30  # int(max_frame_num / 5)
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -112,7 +113,7 @@ def create_frame(num: int):
 
 images = [create_frame(num) for num in range(2, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim.gif",
+    "./vec_field_lotka_volterra_anim2.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
