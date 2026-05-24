@@ -33,7 +33,6 @@ frame_num = []
 ans_eq_num = []
 results = []
 
-FRAMES = 20
 
 file_name = "./ans_lotka_volterra_eq.csv"
 with open(file_name, encoding="UTF-8") as f:
@@ -62,6 +61,7 @@ with open(file_name, encoding="UTF-8") as f:
 df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = max(df["eq_num"].to_list())
+FRAMES = 20  # int(max_frame_num / 5)
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -88,8 +88,8 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(-5, 5)
-    plt.ylim(-5, 5)
+    plt.xlim(-1, 5)
+    plt.ylim(-1, 5)
     # step_size = max_frame_num / FRAMES
     pos = num
     # int(step_size * num)

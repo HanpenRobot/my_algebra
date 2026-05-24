@@ -15,7 +15,7 @@
 ![./lotka_volterra_plot.gif](./lotka_volterra_plot.gif)
 *Fig. 1 Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果*
 
-![./lotka_volterra_plot_anim.gif](./lotka_volterra_plot_anim.gif)
+![./vec_field_lotka_volterra_anim.gif](./vec_field_lotka_volterra_anim.gif)
 *Fig. 2 Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果のアニメーション*
 
 - 参考文献[1] 常微分方程式 基礎から応用へ 新装版 俣野博 岩波書店 2026年 新装版第1刷発行, pp. 110-112
