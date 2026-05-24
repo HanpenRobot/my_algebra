@@ -59,7 +59,7 @@ int main(void)
 {
     FILE *fp = fopen("ans_lotka_volterra_eq3.csv", "w");
     fprintf(fp, "t,x,y,z\n");
-    double a = 2.0, b = 1.0, c = 2.0, d = 6.0, K1 = 6.0, K2 = 10.0;
+    double a = 2.0, b = 1.0, c = 1.0, d = 3.0, K1 = 6.0, K2 = 5.0;
     // (K1 / a) < (K2 / c) and (K2 / d) < (K2 / b) -> (x,y) neq (0,0)となる平衡点を持つ
     //(6.0 / 2) < (10 / 2) and (10 / 6) < (6 / 3 )
     // double x0 = 0.5, y0 = 0.5; // lotka_volterraの方程式の初期値

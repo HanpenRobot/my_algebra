@@ -95,7 +95,7 @@ def create_frame(num: int):
         # r"$\frac{{dx}}{{dt}}=(K1-ax-by)x, (K_1=6, a=2, b=1)$ \n $\frac{{dy}}{{dt}}=-(K2-cx-dy)y, (K_2=10, c=2, d=6)$",
         r"$\frac{dx}{dt}=(K_1-ax-by)x, (K_1=6, a=2, b=1)$"
         + "\n"
-        + r"$\frac{dy}{dt}=(K_2-cx-dy)y, (K_2=10, c=2, d=6)$",
+        + r"$\frac{dy}{dt}=(K_2-cx-dy)y, (K_2=5, c=1, d=3)$",
         fontsize=10,
         loc="center",
     )

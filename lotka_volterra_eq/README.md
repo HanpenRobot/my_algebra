@@ -8,7 +8,7 @@
 ```
 
 ```math
-\frac{dy}{dt}=-(K2-cx-dy)y, (K_2=10, c=2, d=6) \cdots (2)
+\frac{dy}{dt}=-(K2-cx-dy)y, (K_2=5, c=1, d=3) \cdots (2)
 ```
 
 ![./vec_field_lotka_volterra_anim3.gif](./vec_field_lotka_volterra_anim3.gif)
