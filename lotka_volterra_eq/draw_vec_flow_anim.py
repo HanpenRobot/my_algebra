@@ -146,36 +146,49 @@ def create_frame(num: int):
     )
 
     tmp_det = a * d - b * c
+    P_star = ((d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det)
     plt.plot(
-        [(d * K1 - b * K2) / tmp_det],
-        [(a * K2 - c * K1) / tmp_det],
+        [P_star[0]],
+        [P_star[1]],
         color="#FF00FF",
         markersize=5,
         marker="D",
         linestyle="None",
-        label=r"$P^{*}$",
+        label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$",
     )
 
+    P1 = (K1 / a, 0)
     plt.plot(
-        [K1 / a],
-        [0],
+        [P1[0]],
+        [P1[1]],
         color="#F000FF",
         markersize=5,
         marker="^",
         linestyle="None",
-        label=r"$P^1$",
+        label=rf"$P^{{1}}=({P1[0]},{P1[1]})$",
     )
 
+    P2 = (0, K2 / d)
     plt.plot(
-        [0],
-        [K2 / d],
+        [P2[0]],
+        [P2[1]],
         color="#F000FF",
         markersize=5,
         marker="v",
         linestyle="None",
-        label=r"$P^2$",
+        label=rf"$P^{{2}}=({P2[0]},{P2[1]:.3f})$",
     )
-    plt.legend(loc="upper center", borderaxespad=1, fontsize=10)
+    P0 = (0, 0)
+    plt.plot(
+        [P0[0]],
+        [P0[1]],
+        color="#F000FF",
+        markersize=5,
+        marker="o",
+        linestyle="None",
+        label=rf"$P^{{0}}=({P0[0]},{P0[1]:.3f})$",
+    )
+    plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
     # plt.close()
 
     buf = BytesIO()
