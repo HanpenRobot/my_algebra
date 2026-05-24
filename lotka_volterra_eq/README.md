@@ -12,7 +12,7 @@
 ```
 
 ![./vec_field_lotka_volterra_anim3.gif](./vec_field_lotka_volterra_anim3.gif)
-*Fig. 1 平衡点をもつ場合のLotka-Volterraの競争モデルのアニメーション*
+*Fig. 1 安定な平衡点$`P^*`$をもつ場合のLotka-Volterraの競争モデルのアニメーション*
 
 
 - 参考文献[1] 常微分方程式 基礎から応用へ 新装版 俣野博 岩波書店 2026年 新装版第1刷発行, pp. 110-112
