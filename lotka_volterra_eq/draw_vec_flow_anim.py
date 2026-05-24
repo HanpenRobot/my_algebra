@@ -35,7 +35,7 @@ results = []
 
 
 # file_name = "./ans_lotka_volterra_eq.csv"
-file_name = "./ans_lotka_volterra_eq2.csv"
+file_name = "./ans_lotka_volterra_eq3.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -62,7 +62,7 @@ with open(file_name, encoding="UTF-8") as f:
 df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = max(df["eq_num"].to_list())
-FRAMES = 30  # int(max_frame_num / 5)
+FRAMES = 40  # int(max_frame_num / 5)
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -89,8 +89,24 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(-1, 5)
-    plt.ylim(-1, 5)
+    plt.xlim(-1, 7)
+    plt.ylim(-1, 7)
+    plt.title(
+        # r"$\frac{{dx}}{{dt}}=(K1-ax-by)x, (K_1=6, a=2, b=1)$ \n $\frac{{dy}}{{dt}}=-(K2-cx-dy)y, (K_2=10, c=2, d=6)$",
+        r"$\frac{dx}{dt}=(K_1-ax-by)x, (K_1=6, a=2, b=1)$"
+        + "\n"
+        + r"$\frac{dy}{dt}=(K_2-cx-dy)y, (K_2=10, c=2, d=6)$",
+        fontsize=10,
+        loc="center",
+    )
+
+    # ```math
+    # \frac{dx}{dt}=(K1-ax-by)x, (K_1=6, a=2, b=1) \cdots (1)
+    # ```
+
+    # ```math
+    # \frac{dy}{dt}=-(K2-cx-dy)y, (K_2=10, c=2, d=6) \cdots (2)
+    # ```
     # step_size = max_frame_num / FRAMES
     pos = num
     # int(step_size * num)
@@ -103,7 +119,63 @@ def create_frame(num: int):
         marker="s",
         linestyle="None",
     )
+    a = 2
+    b = 1
+    c = 1
+    d = 3
+    K1 = 6
+    K2 = 5
+    plt.plot(
+        [K1 / a, 0],
+        [0, K1 / b],
+        color="#0000FF",
+        markersize=1,
+        marker="s",
+        linestyle="-.",
+        label=r"$K_1=ax+by$",
+    )
 
+    plt.plot(
+        [K2 / c, 0],
+        [0, K2 / d],
+        color="#00AA00",
+        markersize=1,
+        marker="s",
+        linestyle="-.",
+        label=r"$K_2=cx+dy$",
+    )
+
+    tmp_det = a * d - b * c
+    plt.plot(
+        [(d * K1 - b * K2) / tmp_det],
+        [(a * K2 - c * K1) / tmp_det],
+        color="#FF00FF",
+        markersize=5,
+        marker="D",
+        linestyle="None",
+        label=r"$P^{*}$",
+    )
+
+    plt.plot(
+        [K1 / a],
+        [0],
+        color="#F000FF",
+        markersize=5,
+        marker="^",
+        linestyle="None",
+        label=r"$P^1$",
+    )
+
+    plt.plot(
+        [0],
+        [K2 / d],
+        color="#F000FF",
+        markersize=5,
+        marker="v",
+        linestyle="None",
+        label=r"$P^2$",
+    )
+    plt.legend(loc="upper center", borderaxespad=1, fontsize=10)
     # plt.close()
 
     buf = BytesIO()
@@ -111,21 +183,11 @@ def create_frame(num: int):
     return Image.open(buf)
 
 
-images = [create_frame(num) for num in range(2, FRAMES)]
+images = [create_frame(num) for num in range(4, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim2.gif",
+    "./vec_field_lotka_volterra_anim3.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
     loop=0,
 )
-
-
-# pos = 4
-# res = get_data(df=df, pos=pos, max_frame_num=max_frame_num, max_eq_num=max_eq_num)
-# print(f"{res[0]=},{res[1]=}****")
-# print(f"{df=}")
-# f_num = 4
-# print(df[df["frame_num"] == f_num])
-# with codecs.open("./cube_root_result.csv", "w", "utf-8_sig", "ignore") as data:
-#     data_df.to_csv(data, index=False)

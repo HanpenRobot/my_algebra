@@ -1,25 +1,18 @@
-# Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果
+# Lotka-Volterraの競争モデルを4次のルンゲ・クッタ法で解いた結果
 
-+ Lotka-Volterra方程式を$`(1)`$,$`(2)`$で定義する。
++ Lotka-Volterraの競争モデルを$`(1)`$,$`(2)`$で定義する。
 + 微分方程式を解く際に使用したルンゲ・クッタ法のコードは[./runge_kutta_lotka_volterra_eq.c](./runge_kutta_lotka_volterra_eq.c)である。 (このコードは参考文献[2]のコードを参考に実装した)。
 
 ```math
-\frac{dx}{dt}=(a-cy)x \cdots (1)
+\frac{dx}{dt}=(K1-ax-by)x, (K_1=6, a=2, b=1) \cdots (1)
 ```
 
 ```math
-\frac{dy}{dt}=-(b-dx)y \cdots (2)
+\frac{dy}{dt}=-(K2-cx-dy)y, (K_2=10, c=2, d=6) \cdots (2)
 ```
 
-
-![./lotka_volterra_plot.gif](./lotka_volterra_plot.gif)
-*Fig. 1 Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果*
-
-![./vec_field_lotka_volterra_anim.gif](./vec_field_lotka_volterra_anim.gif)
-*Fig. 2 Lotka-Volterra方程式を4次のルンゲ・クッタ法で解いた結果のアニメーション*
-
-![./vec_field_lotka_volterra_anim2.gif](./vec_field_lotka_volterra_anim2.gif)
-*Fig. 3 平衡点をもつ場合のLotka-Volterra方程式のアニメーション*
+![./vec_field_lotka_volterra_anim3.gif](./vec_field_lotka_volterra_anim3.gif)
+*Fig. 1 平衡点をもつ場合のLotka-Volterraの競争モデルのアニメーション*
 
 
 - 参考文献[1] 常微分方程式 基礎から応用へ 新装版 俣野博 岩波書店 2026年 新装版第1刷発行, pp. 110-112
