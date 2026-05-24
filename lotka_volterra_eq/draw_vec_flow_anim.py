@@ -186,7 +186,7 @@ def create_frame(num: int):
         markersize=5,
         marker="o",
         linestyle="None",
-        label=rf"$P^{{0}}=({P0[0]},{P0[1]:.3f})$",
+        label=rf"$P^{{0}}=({P0[0]},{P0[1]})$",
     )
     plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
     # plt.close()
