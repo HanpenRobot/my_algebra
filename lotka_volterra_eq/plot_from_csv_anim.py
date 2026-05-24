@@ -28,6 +28,8 @@ fig = plt.figure(dpi=256)
 ans_T = []
 ans_X = []
 ans_Y = []
+frame_num = []
+ans_eq_num = []
 file_name = "./ans_lotka_volterra_eq.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
@@ -35,15 +37,19 @@ with open(file_name, encoding="UTF-8") as f:
     for line in reader:
         # if num > 0 and num % 500 == 0:
         # if num > 0:
-        if num > 0 and num % 50 == 0:
+        if num > 0:
             ans_T.append(float(line[0]))
             ans_X.append(float(line[1]))
             ans_Y.append(float(line[2]))
+            frame_num.append(int(line[3]))
+            ans_eq_num.append(int(line[4]))
         num += 1
 
 FRAMES = 360
 # step_size = int(len(ans_X) / FRAMES)
 # FRAMES -= 1
+eq_num_max = max(ans_eq_num)
+frame_num_max = max(frame_num)
 
 
 def create_frame(num: int):
@@ -64,6 +70,27 @@ def create_frame(num: int):
     # pos = (num - 1) * step_size
     # pos2 = num * step_size
     print(f"frame_num: {num=},{step_size=}, {pos=}***")
+    ans_T = []
+    ans_X = []
+    ans_Y = []
+    frame_num = []
+    ans_eq_num = []
+    file_name = "./ans_lotka_volterra_eq.csv"
+    with open(file_name, encoding="UTF-8") as f:
+        reader = csv.reader(f)
+        num = 0
+        for line in reader:
+            # if num > 0 and num % 500 == 0:
+            # if num > 0:
+            if num > 0:
+                ans_T.append(float(line[0]))
+                ans_X.append(float(line[1]))
+                ans_Y.append(float(line[2]))
+                frame_num.append(int(line[3]))
+                ans_eq_num.append(int(line[4]))
+            num += 1
+    for num in range(eq_num_max):
+
     # ans_T = []
     # ans_X = []
     # ans_Y = []
@@ -81,15 +108,14 @@ def create_frame(num: int):
     #             print(f"why={num=}*************")
     #             break
 
-    # Lotka Volterra方程式の解曲線をプロット
-    plt.plot(
-        ans_X[:pos],
-        ans_Y[:pos],
-        color=X1_LINE_COLOR,
-        # markersize=1,
-        # marker="s",
-        # linestyle="None",
-    )
+    # plt.plot(
+    #     ans_X[pos],
+    #     ans_Y[pos],
+    #     color=X1_LINE_COLOR,
+    #     # markersize=1,
+    #     # marker="s",
+    #     # linestyle="None",
+    # )
 
     # plt.close()
 

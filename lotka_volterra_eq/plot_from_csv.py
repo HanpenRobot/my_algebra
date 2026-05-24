@@ -50,11 +50,11 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(0, 5)
-    plt.ylim(0, 15)
+    plt.xlim(-1, 5)
+    plt.ylim(-1, 5)
 
     # Lotka Volterra方程式の解曲線をプロット
-    plt.plot(ans_X, ans_Y, color=X1_LINE_COLOR, linewidth=1)
+    plt.plot(ans_X, ans_Y, color=X1_LINE_COLOR, markersize=1, marker="o", linestyle="")
 
     plt.close()
 
