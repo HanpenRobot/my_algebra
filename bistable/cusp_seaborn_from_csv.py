@@ -48,7 +48,7 @@ def create_frame2(angle: int):
     fig = plt.figure(figsize=(12, 12))
     ax = fig.add_subplot(111, projection="3d")
     sc = ax.scatter(ans_A, ans_B, ans_X, c=ans_X, cmap="viridis", marker="o")
-    ax.view_init(angle * 2, angle * 2)
+    ax.view_init(angle * 4, angle * 4)
     ax.set_xlabel("R-axis", fontsize=22)
     ax.set_ylabel("K-axis", fontsize=22)
     ax.set_zlabel("n-axis", fontsize=22)
@@ -62,7 +62,7 @@ def create_frame2(angle: int):
 
 
 FRAMES = 45
-FRAMES = 180
+FRAMES = 90
 images = [create_frame2(angle) for angle in range(FRAMES)]
 images[0].save(
     "./output001.gif",

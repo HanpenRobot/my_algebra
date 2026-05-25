@@ -8,8 +8,8 @@ L = 0.05
 L2 = 6
 # R = list(np.arange(0, 0.8, 0.01))
 # K = list(np.arange(4, 6, 0.01))
-R = list(np.arange(0, 2, 0.05))
-K = list(np.arange(0, 7, 0.05))
+R = list(np.arange(0.5, 0.9, 0.01))
+K = list(np.arange(4, 9, 0.01))
 
 # r=3*sqrt(3)/8=0.649
 # k=3*sqrt(3)=5.19
@@ -41,14 +41,16 @@ for r in R:
         except:
             print(f"Err: {coeffs=}")
             continue
-        print(f"############{solutions=}")
+        # print(f"############{solutions=}")
         solutions = [
             complex(x).real
             for x in solutions
             if np.abs(complex(x).imag) < 0.001  # 虚部が十分小さい場合、実数解とみなす
         ]
         count_sol = len(solutions)
-        print(f"{r=}, {k=}, {solutions=}, {count_sol=}")
+        # print(f"{r=}, {k=}, {solutions=}, {count_sol=}")
+        if count_sol != 1:
+            print(f"{r=}, {k=}, {solutions=}, {count_sol=}")
         for tmp_ans in solutions:
             results.append(
                 {
