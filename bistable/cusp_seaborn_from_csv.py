@@ -29,10 +29,10 @@ def create_frame(angle: int):
     fig = plt.figure(figsize=(12, 12))
     ax = fig.add_subplot(111, projection="3d")
     sc = ax.scatter(ans_A, ans_B, ans_X, c=ans_X, cmap="viridis", marker="o")
-    ax.view_init(30, angle * 4)
-    ax.set_xlabel("A-axis", fontsize=22)
-    ax.set_ylabel("B-axis", fontsize=22)
-    ax.set_zlabel("x-axis", fontsize=22)
+    ax.view_init(angle * 8, angle * 8)
+    ax.set_xlabel("R-axis", fontsize=22)
+    ax.set_ylabel("K-axis", fontsize=22)
+    ax.set_zlabel("n-axis", fontsize=22)
 
     plt.colorbar(sc)
     plt.close()
@@ -61,7 +61,7 @@ def create_frame2(angle: int):
     return Image.open(buf)
 
 
-FRAMES = 90
+FRAMES = 45
 FRAMES = 180
 images = [create_frame2(angle) for angle in range(FRAMES)]
 images[0].save(
