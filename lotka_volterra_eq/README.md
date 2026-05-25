@@ -4,11 +4,11 @@
 + 微分方程式を解く際に使用したルンゲ・クッタ法のコードは[./runge_kutta_lotka_volterra_eq.c](./runge_kutta_lotka_volterra_eq.c)である。 (このコードは参考文献[2]のコードを参考に実装した)。
 
 ```math
-\frac{dx}{dt}=(K1-ax-by)x \cdots (1)
+\frac{dx}{dt}=(K_1-ax-by)x \cdots (1)
 ```
 
 ```math
-\frac{dy}{dt}=-(K2-cx-dy)y \cdots (2)
+\frac{dy}{dt}=-(K_2-cx-dy)y \cdots (2)
 ```
 
 ![./vec_field_lotka_volterra_anim3.gif](./vec_field_lotka_volterra_anim3.gif)
