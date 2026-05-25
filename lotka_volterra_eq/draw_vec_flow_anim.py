@@ -35,7 +35,7 @@ results = []
 
 
 # file_name = "./ans_lotka_volterra_eq.csv"
-file_name = "./ans_lotka_volterra_eq3.csv"
+file_name = "./ans_lotka_volterra_eq4.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -62,7 +62,8 @@ with open(file_name, encoding="UTF-8") as f:
 df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = max(df["eq_num"].to_list())
-FRAMES = 40  # int(max_frame_num / 5)
+# FRAMES = 40  # int(max_frame_num / 5)
+FRAMES = 70
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -119,12 +120,19 @@ def create_frame(num: int):
         marker="s",
         linestyle="None",
     )
-    a = 2
-    b = 1
-    c = 1
-    d = 3
-    K1 = 6
-    K2 = 5
+    # a = 2
+    # b = 1
+    # c = 1
+    # d = 3
+    # K1 = 6
+    # K2 = 5
+    a = 1
+    b = 3
+    c = 2
+    d = 1
+    K1 = 5
+    K2 = 6
+    # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
     plt.plot(
         [K1 / a, 0],
         [0, K1 / b],
@@ -198,7 +206,7 @@ def create_frame(num: int):
 
 images = [create_frame(num) for num in range(4, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim3.gif",
+    "./vec_field_lotka_volterra_anim4.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
