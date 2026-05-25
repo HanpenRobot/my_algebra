@@ -8,8 +8,20 @@
 ```
 
 ```math
-\frac{dy}{dt}=-(K_2-cx-dy)y \cdots (2)
+\frac{dy}{dt}=(K_2-cx-dy)y \cdots (2)
 ```
+
+> [!NOTE]
+> $`y=0`$のときは$`(2)`$は$`\frac{dy}{dt}=(K_2-cx-dy)y=(K_2-cx-dy)0=0`$なので無視してよい。$`(1)`$は
+> ```math
+> \frac{dx}{dt}=(K_1-ax)x=K_1x-ax^2 \cdots (3)
+> ```
+> となる。これは$`x`$に関するロジスティクス方程式である。
+> $`x=0`$のときは$`(1)`$は$`\frac{dx}{dt}=(K_1-ax-by)x=(K_1-ax-by)0=0`$なので無視してよい。$`(2)`$は
+> ```math
+> \frac{dy}{dt}=(K_2-dy)y=K_2y-dy^2 \cdots (4)
+> ```
+> となる。これは$`y`$に関するロジスティクス方程式である。
 
 ![./vec_field_lotka_volterra_anim3.gif](./vec_field_lotka_volterra_anim3.gif)
 *Fig. 1 安定な平衡点$`P^*`$をもつ場合のLotka-Volterraの競争モデルのアニメーション*
