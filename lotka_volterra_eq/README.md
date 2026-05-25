@@ -17,6 +17,12 @@
 ![./vec_field_lotka_volterra_anim4.gif](./vec_field_lotka_volterra_anim4.gif)
 *Fig. 2 平衡点$`P^*`$が不安定な場合のLotka-Volterraの競争モデルのアニメーション*
 
+![./vec_field_lotka_volterra_anim5.gif](./vec_field_lotka_volterra_anim5.gif)
+*Fig. 3 平衡点$`P^*`$が存在しないLotka-Volterraの競争モデルのアニメーション($`P_1`$に収束していることがわかる)*
+
+![./vec_field_lotka_volterra_anim6.gif](./vec_field_lotka_volterra_anim6.gif)
+*Fig. 4 平衡点$`P^*`$が存在しないLotka-Volterraの競争モデルのアニメーション($`P_2`$に収束していることがわかる)*
+
 
 - 参考文献[1] 常微分方程式 基礎から応用へ 新装版 俣野博 岩波書店 2026年 新装版第1刷発行, pp. 110-112
 - 参考文献[2] C言語による数値計算入門 第2版 新装版 堀之内 總一・酒井幸吉・榎園茂 森北出版株式会社 2015年 第2版装版第1刷発行, pp.128-129

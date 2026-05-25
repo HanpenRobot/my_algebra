@@ -35,7 +35,7 @@ results = []
 
 
 # file_name = "./ans_lotka_volterra_eq.csv"
-file_name = "./ans_lotka_volterra_eq4.csv"
+file_name = "./ans_lotka_volterra_eq5.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -90,13 +90,33 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(-1, 7)
-    plt.ylim(-1, 7)
+    plt.xlim(-1, 8)
+    plt.ylim(-1, 8)
+    # a = 1
+    # b = 3
+    # c = 1
+    # d = 3
+    # K1 = 5
+    # K2 = 12
+    # a = 1
+    # b = 3
+    # c = 2
+    # d = 1
+    # K1 = 5
+    # K2 = 6
+    a = 1
+    b = 3
+    c = 1
+    d = 3
+    K1 = 5
+    K2 = 7.5
+    # double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 7.5;
+    # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
     plt.title(
         # r"$\frac{{dx}}{{dt}}=(K1-ax-by)x, (K_1=6, a=2, b=1)$ \n $\frac{{dy}}{{dt}}=-(K2-cx-dy)y, (K_2=10, c=2, d=6)$",
-        r"$\frac{dx}{dt}=(K_1-ax-by)x, (K_1=6, a=2, b=1)$"
+        rf"$\frac{{dx}}{{dt}}=(K_1-ax-by)x, (K_1={K1}, a={a}, b={b})$"
         + "\n"
-        + r"$\frac{dy}{dt}=(K_2-cx-dy)y, (K_2=5, c=1, d=3)$",
+        + rf"$\frac{{dy}}{{dt}}=(K_2-cx-dy)y, (K_2={K2}, c={c}, d={d})$",
         fontsize=10,
         loc="center",
     )
@@ -126,13 +146,10 @@ def create_frame(num: int):
     # d = 3
     # K1 = 6
     # K2 = 5
-    a = 1
-    b = 3
-    c = 2
-    d = 1
-    K1 = 5
-    K2 = 6
+
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
+    # double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 12.0;
+
     plt.plot(
         [K1 / a, 0],
         [0, K1 / b],
@@ -153,17 +170,17 @@ def create_frame(num: int):
         label=r"$K_2=cx+dy$",
     )
 
-    tmp_det = a * d - b * c
-    P_star = ((d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det)
-    plt.plot(
-        [P_star[0]],
-        [P_star[1]],
-        color="#FF00FF",
-        markersize=5,
-        marker="D",
-        linestyle="None",
-        label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$",
-    )
+    # tmp_det = a * d - b * c
+    # P_star = ((d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det)
+    # plt.plot(
+    #     [P_star[0]],
+    #     [P_star[1]],
+    #     color="#FF00FF",
+    #     markersize=5,
+    #     marker="D",
+    #     linestyle="None",
+    #     label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$",
+    # )
 
     P1 = (K1 / a, 0)
     plt.plot(
@@ -206,7 +223,7 @@ def create_frame(num: int):
 
 images = [create_frame(num) for num in range(4, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim4.gif",
+    "./vec_field_lotka_volterra_anim5.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
