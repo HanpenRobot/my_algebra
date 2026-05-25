@@ -165,7 +165,7 @@ def create_frame(num: int):
         markersize=5,
         marker="^",
         linestyle="None",
-        label=rf"$P^{{1}}=({P1[0]},{P1[1]})$",
+        label=rf"$P_{{1}}=({P1[0]},{P1[1]})$",
     )
 
     P2 = (0, K2 / d)
@@ -176,7 +176,7 @@ def create_frame(num: int):
         markersize=5,
         marker="v",
         linestyle="None",
-        label=rf"$P^{{2}}=({P2[0]},{P2[1]:.3f})$",
+        label=rf"$P_{{2}}=({P2[0]},{P2[1]:.3f})$",
     )
     P0 = (0, 0)
     plt.plot(
@@ -186,7 +186,7 @@ def create_frame(num: int):
         markersize=5,
         marker="o",
         linestyle="None",
-        label=rf"$P^{{0}}=({P0[0]},{P0[1]})$",
+        label=rf"$P_{{0}}=({P0[0]},{P0[1]})$",
     )
     plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
     # plt.close()
