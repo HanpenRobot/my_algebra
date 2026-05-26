@@ -33,7 +33,7 @@ ans_Y = []
 frame_num = []
 ans_eq_num = []
 results = []
-plt.axes().set_aspect("equal")
+# plt.axes().set_aspect("equal")
 
 # file_name = "./ans_lotka_volterra_eq.csv"
 file_name = "./ans_simple_pendulum_eq.csv"
@@ -64,7 +64,7 @@ df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = max(df["eq_num"].to_list())
 # FRAMES = 40  # int(max_frame_num / 5)
-FRAMES = 100
+FRAMES = 120
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -94,7 +94,8 @@ def create_frame(num: int):
     AXIS_X_MAX = 3
     plt.xlim(-AXIS_X_MAX * np.pi, AXIS_X_MAX * np.pi)
     plt.ylim(-AXIS_X_MAX * np.pi, AXIS_X_MAX * np.pi)
-    TMP_XTICKS = np.arange(-AXIS_X_MAX * np.pi, AXIS_X_MAX * np.pi, np.pi)
+    plt.yticks(np.arange(-8, 9, 2))
+    TMP_XTICKS = np.arange(-AXIS_X_MAX * np.pi, AXIS_X_MAX * np.pi + 1, np.pi)
     TMP_XLABELS = []
     TMP_LABELS_NUM = -AXIS_X_MAX
     for x in range(len(TMP_XTICKS)):
@@ -111,7 +112,7 @@ def create_frame(num: int):
     )
     # [rf"${x}\pi$" for x in TMP_XTICKS]
 
-    a = 2
+    a = 4
 
     plt.title(
         rf"$\frac{{d\theta}}{{dt}}=\omega, \frac{{d\omega}}{{dt}}=-a\sin(\theta), (a={a})$",
@@ -138,6 +139,8 @@ def create_frame(num: int):
 
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
     # double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 12.0;
+    # 円の定義: Circle((中心x, 中心y), 半径)
+    # c = plt.Circle((0, 0), np.sqrt(a), fc="lightblue", ec="black")
 
     # plt.plot(
     #     [K1 / a, 0],

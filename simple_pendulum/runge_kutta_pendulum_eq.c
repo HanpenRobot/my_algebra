@@ -59,7 +59,7 @@ int main(void)
 {
     FILE *fp = fopen("ans_simple_pendulum_eq.csv", "w");
     fprintf(fp, "t,x,y,z\n");
-    double a = 2.0;
+    double a = 4.0;
 
     int eq_num = 0;
     for (double x0 = -10.0; x0 < 10.0; x0 += 0.5)
