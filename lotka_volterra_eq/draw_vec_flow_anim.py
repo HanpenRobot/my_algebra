@@ -36,7 +36,7 @@ results = []
 
 
 # file_name = "./ans_lotka_volterra_eq.csv"
-file_name = "./ans_lotka_volterra_eq3.csv"
+file_name = "./ans_lotka_volterra_eq5.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -131,12 +131,12 @@ def create_frame(num: int):
     # d = 1
     # K1 = 5
     # K2 = 6.0
-    a = 2
-    b = 1
+    a = 1
+    b = 3
     c = 1
     d = 3
-    K1 = 6
-    K2 = 5
+    K1 = 5
+    K2 = 7.5
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
     # double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 7.5;
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
@@ -199,17 +199,18 @@ def create_frame(num: int):
     )
 
     tmp_det = a * d - b * c
-    P_star = [(d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det]
-    res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P_star)
-    plt.plot(
-        [P_star[0]],
-        [P_star[1]],
-        color="#FF00FF",
-        markersize=5,
-        marker="D",
-        linestyle="None",
-        label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$," + res,
-    )
+    if tmp_det != 0:
+        P_star = [(d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det]
+        res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P_star)
+        plt.plot(
+            [P_star[0]],
+            [P_star[1]],
+            color="#FF00FF",
+            markersize=5,
+            marker="D",
+            linestyle="None",
+            label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$," + res,
+        )
 
     P1 = [K1 / a, 0]
     res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P1)
@@ -255,7 +256,7 @@ def create_frame(num: int):
 
 images = [create_frame(num) for num in range(4, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim3.gif",
+    "./vec_field_lotka_volterra_anim5.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
