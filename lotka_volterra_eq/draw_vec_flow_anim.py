@@ -36,7 +36,7 @@ results = []
 
 
 # file_name = "./ans_lotka_volterra_eq.csv"
-file_name = "./ans_lotka_volterra_eq5.csv"
+file_name = "./ans_lotka_volterra_eq6.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
@@ -135,8 +135,8 @@ def create_frame(num: int):
     b = 3
     c = 1
     d = 3
-    K1 = 5
-    K2 = 7.5
+    K1 = 7.5
+    K2 = 5
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
     # double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 7.5;
     # double a = 1.0, b = 3.0, c = 2.0, d = 1.0, K1 = 5.0, K2 = 6.0;
@@ -256,7 +256,7 @@ def create_frame(num: int):
 
 images = [create_frame(num) for num in range(4, FRAMES)]
 images[0].save(
-    "./vec_field_lotka_volterra_anim5.gif",
+    "./vec_field_lotka_volterra_anim6.gif",
     save_all=True,
     append_images=images[1:],
     duration=100,
