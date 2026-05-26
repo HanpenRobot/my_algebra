@@ -8,7 +8,7 @@
 ```
 
 ```math
-\frac{dy}{d\omega}=-a\sin(\theta) \cdots (2)
+\frac{d\omega}{dt}=-a\sin(\theta) \cdots (2)
 ```
 
 ![./vec_field_ans_simple_pendulum_eq.gif](./vec_field_ans_simple_pendulum_eq.gif)
