@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from PIL import Image
 import pandas as pd
+import numpy as np
 
 sns.set(style="darkgrid")
 
@@ -78,6 +79,20 @@ def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
         ret_x.append(df3["x"].to_list()[0])
         ret_y.append(df3["y"].to_list()[0])
     return ret_x, ret_y
+
+
+def get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec):
+
+    jacob_mat = [
+        [K1 - 2 * a * tmp_vec[0] - b * tmp_vec[1], -b * tmp_vec[0]],
+        [-c * tmp_vec[1], K2 - c * tmp_vec[0] - 2 * d * tmp_vec[1]],
+    ]
+    e_value, ev = np.linalg.eig(jacob_mat)
+    tmp_ans = list(e_value)
+    res_list = []
+    for i, item in enumerate(tmp_ans):
+        res_list.append(rf"$\lambda_{{{i}}}={item:.2f}$")
+    return ",".join(res_list)
 
 
 def create_frame(num: int):
@@ -178,7 +193,8 @@ def create_frame(num: int):
     )
 
     tmp_det = a * d - b * c
-    P_star = ((d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det)
+    P_star = [(d * K1 - b * K2) / tmp_det, (a * K2 - c * K1) / tmp_det]
+    res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P_star)
     plt.plot(
         [P_star[0]],
         [P_star[1]],
@@ -186,10 +202,11 @@ def create_frame(num: int):
         markersize=5,
         marker="D",
         linestyle="None",
-        label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$",
+        label=rf"$P^{{*}}=({P_star[0]},{P_star[1]})$," + res,
     )
 
-    P1 = (K1 / a, 0)
+    P1 = [K1 / a, 0]
+    res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P1)
     plt.plot(
         [P1[0]],
         [P1[1]],
@@ -197,10 +214,11 @@ def create_frame(num: int):
         markersize=5,
         marker="^",
         linestyle="None",
-        label=rf"$P_{{1}}=({P1[0]},{P1[1]})$",
+        label=rf"$P_{{1}}=({P1[0]},{P1[1]})$," + res,
     )
 
-    P2 = (0, K2 / d)
+    P2 = [0, K2 / d]
+    res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P2)
     plt.plot(
         [P2[0]],
         [P2[1]],
@@ -208,9 +226,10 @@ def create_frame(num: int):
         markersize=5,
         marker="v",
         linestyle="None",
-        label=rf"$P_{{2}}=({P2[0]},{P2[1]:.3f})$",
+        label=rf"$P_{{2}}=({P2[0]},{P2[1]:.3f})$," + res,
     )
-    P0 = (0, 0)
+    P0 = [0, 0]
+    res = get_jacob_eign_value(a, b, c, d, K1, K2, tmp_vec=P0)
     plt.plot(
         [P0[0]],
         [P0[1]],
@@ -218,7 +237,7 @@ def create_frame(num: int):
         markersize=5,
         marker="o",
         linestyle="None",
-        label=rf"$P_{{0}}=({P0[0]},{P0[1]})$",
+        label=rf"$P_{{0}}=({P0[0]},{P0[1]})$," + res,
     )
     plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
     # plt.close()
