@@ -33,7 +33,7 @@ ans_Y = []
 frame_num = []
 ans_eq_num = []
 results = []
-# plt.axes().set_aspect("equal")
+plt.axes().set_aspect("equal")
 
 # file_name = "./ans_lotka_volterra_eq.csv"
 file_name = "./ans_jordan_flow.csv"
