@@ -31,16 +31,16 @@ double func1(double x, double y)
 double func2(double a, double x, double y)
 {
 
-    double L = 0.2;
+    double L = 0.5;
     if (fabs(sigma(x, y)) < L)
-        return 0.2 * y - 0.1 * x + sigma(x, y) / L;
+        return 2 * y - 1 * x + sigma(x, y) / L;
     if (sigma(x, y) > 0)
     {
-        return 0.2 * y - 0.5 * x;
+        return 2 * y - 5 * x;
     }
     if (sigma(x, y) < 0)
     {
-        return 0.2 * y + 0.3 * x;
+        return 2 * y + 3 * x;
     }
 
     // 0.5 * x + y > 0
@@ -107,8 +107,8 @@ int main(void)
     double a = 2.0;
 
     int eq_num = 0;
-    for (double x0 = -5.0; x0 < 5.0; x0 += 0.5)
-        for (double y0 = -5.0; y0 < 5.0; y0 += 0.5)
+    for (double x0 = -10.0; x0 < 10.0; x0 += 1.0)
+        for (double y0 = -10.0; y0 < 10.0; y0 += 1.0)
         {
             {
                 run_runge_result(fp, a, x0, y0, eq_num);
