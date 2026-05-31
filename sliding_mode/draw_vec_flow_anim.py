@@ -91,7 +91,7 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    AXIS_MAX = 1.0
+    AXIS_MAX = 10.0
     plt.xlim(-AXIS_MAX, AXIS_MAX)
     plt.ylim(-AXIS_MAX, AXIS_MAX)
     # plt.yticks(np.arange(-8, 9, 2))
@@ -112,15 +112,15 @@ def create_frame(num: int):
     # )
     # [rf"${x}\pi$" for x in TMP_XTICKS]
 
-    a = 25
-    b = 5
-    plt.title(
-        rf"$\frac{{dx}}{{dt}}=a x - b y -x(x^2+y^2), $"
-        + "\n"
-        + rf"$\frac{{dy}}{{dt}}=b x + a y -y (x^2+y^2), (a={a},b={b})$",
-        fontsize=10,
-        loc="center",
-    )
+    # a = 25
+    # b = 5
+    # plt.title(
+    #     rf"$\frac{{dx}}{{dt}}=a x - b y -x(x^2+y^2), $"
+    #     + "\n"
+    #     + rf"$\frac{{dy}}{{dt}}=b x + a y -y (x^2+y^2), (a={a},b={b})$",
+    #     fontsize=10,
+    #     loc="center",
+    # )
 
     pos = num
     res = get_data(df=df, pos=pos, max_frame_num=max_frame_num, max_eq_num=max_eq_num)
