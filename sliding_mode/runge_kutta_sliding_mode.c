@@ -36,27 +36,12 @@ double func2(double a, double x, double y)
     //     return 0.2 * y - 0.1 * x - (sigma(x, y) / L);
     if (sigma(x, y) > 0)
     {
-        return 0.2 * y - 0.5 * x;
+        return 2 * y - 5 * x;
     }
     if (sigma(x, y) < 0)
     {
-        return 0.2 * y + 0.3 * x;
+        return 2 * y + 3 * x;
     }
-
-    // 0.5 * x + y > 0
-    // y> -x/2
-    // y < x/2 ;
-    // return -x;
-    // if (2.0 * y < x)
-    // {
-    //     return a * y - 5.0 * x;
-    // }
-    // if (2.0 * y > x)
-    // {
-    //     return a * y + 3.0 * x;
-    // }
-
-    // return a * y - x - gain(x, y);
 }
 
 double run_runge_result(FILE *fp, double a, double x0, double y0, int eq_num)
