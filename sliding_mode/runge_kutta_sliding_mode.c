@@ -31,9 +31,9 @@ double func1(double x, double y)
 double func2(double a, double x, double y)
 {
 
-    double L = 0.5;
+    double L = 1.5;
     if (fabs(sigma(x, y)) < L)
-        return 2 * y - 1 * x + sigma(x, y) / L;
+        return 2 * y - 1 * x - (sigma(x, y) / L);
     if (sigma(x, y) > 0)
     {
         return 2 * y - 5 * x;
