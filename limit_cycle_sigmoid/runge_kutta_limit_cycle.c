@@ -10,13 +10,13 @@ double sig(double x)
 double func1(double a, double b, double x, double y)
 {
 
-    return -x + sig(2.0 * x - y);
+    return -3.0 * x + sig(2.0 * x - y);
 }
 
 double func2(double a, double b, double x, double y)
 {
 
-    return -y + sig(x - 2.0 * y);
+    return -y + sig(-3 + x - 2.0 * y);
 }
 
 double run_runge_result(FILE *fp, double a, double b, double x0, double y0, int eq_num)
