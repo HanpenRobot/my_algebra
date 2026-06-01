@@ -75,7 +75,7 @@ def draw(n: int):
     res_A2, res_B2 = make_data(tmp_df=df, per=1)
     plt.plot(res_A2, res_B2, ".", ms=1, color="#00AA00")
 
-    res_A3, res_B3 = make_data(tmp_df=df, per=2)
+    res_A3, res_B3 = make_data(tmp_df=df, per=4)
     plt.plot(res_A3, res_B3, ".", ms=1, color="#00AAAA")
 
     res_A4, res_B4 = make_data(tmp_df=df, per=3)

@@ -39,7 +39,7 @@ int main(void)
 {
     int a_max = 640, b_max = 480;
     double x = 0.01, y = 0.01, x1, x2, y1, y2;
-    int M = 1000, N = 32, ans_per = 0;
+    int M = 4000, N = 32, ans_per = 0;
     double ans_R = 0.0;
     double a_step = 2.0 / a_max, b_step = 2.0 / b_max;
     double A1[100] = {0.0}, A2[100] = {0.0};
