@@ -62,7 +62,10 @@ int main(void)
     double a = 4.0;
 
     int eq_num = 0;
-    double x0 = 0.4, y0 = 3.0;
+    // double x0 = 0.4, y0 = 3.5;
+    // double x0 = 0.4, y0 = 4.0;
+    double x0 = 0.4, y0 = 1.5;
+
     run_runge_result(fp, a, x0, y0, eq_num);
     // for (double x0 = -10.0; x0 < 10.0; x0 += 0.5)
     //     for (double y0 = -8.0; y0 < 8.0; y0 += 0.5)
