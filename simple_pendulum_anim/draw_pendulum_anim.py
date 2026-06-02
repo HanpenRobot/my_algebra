@@ -141,9 +141,9 @@ def create_frame(num: int):
         circle_y2[0] - 0.6,
         rf"$\theta={theta:.3f}$ rad",
         color="gray",
-        fontsize=15,
+        fontsize=14,
     )
-    plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
+    plt.legend(loc="upper center", borderaxespad=1, fontsize=12)
 
     buf = BytesIO()
     fig.savefig(buf)
