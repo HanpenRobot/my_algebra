@@ -71,7 +71,7 @@ int main(void)
                     break;
                 }
             }
-            if (ans_R >= N)
+            if (ans_per >= N)
             {
                 ans_per = 0;
             }
