@@ -20,29 +20,39 @@ u(x,y)=-\varphi(x,y) \cdots (3)
 ``` -->
 
 ```math
-\ddot{Q}_{1}=-Q_{1}(Q^2_1+\epsilon Q^2_2) \\
+\ddot{Q}_{1}=-Q_{1}(Q^2_1+\epsilon Q^2_2)
+```
+```math
 \ddot{Q}_{2}=-Q_{2}(Q^2_2+\epsilon Q^2_1)
 ```
 
 
 ```math
 \dot{Q}_1=X \\
+```
+```math
 \dot{X}=-Q_{1}(Q^2_1+\epsilon Q^2_2)
 ```
 
 ```math
-\dot{Q}_2=Y \\
+\dot{Q}_2=Y
+```
+```math
 \dot{Y}=-Q_{2}(Q^2_2+\epsilon Q^2_1)
 ```
 
 
 ```math
-\dot{W}=X \\
+\dot{W}=X
+```
+```math
 \dot{X}=-W(W^2+\epsilon Z^2)
 ```
 
 ```math
-\dot{Z}=Y \\
+\dot{Z}=Y
+```
+```math
 \dot{Y}=-Z(Z^2+\epsilon W^2)
 ```
 
