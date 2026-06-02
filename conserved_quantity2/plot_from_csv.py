@@ -6,6 +6,7 @@ from PIL import Image
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
+plt.axes().set_aspect("equal")
 FRAMES = 180
 fig = plt.figure(dpi=256)
 
@@ -17,8 +18,8 @@ with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
     for line in reader:
-        # if num > 0 and num % 100 == 0:
         if num > 0:
+            # if num > 0:
             ans_X.append(float(line[4]))
             ans_Y.append(float(line[3]))
         num += 1
@@ -49,8 +50,8 @@ def draw(n: int):
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
     plt.cla()
-    plt.xlabel(r"$x$", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(r"$y$", fontsize=LABEL_FONT_SIZE, rotation=0)
+    plt.xlabel(r"$Q_1$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(r"$Q_2$", fontsize=LABEL_FONT_SIZE, rotation=0)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
     # plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
@@ -58,11 +59,11 @@ def draw(n: int):
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
     plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
 
-    plt.plot(ans_X[:], ans_Y[:], "o", ms=1, color=RT_LINE_COLOR)
+    plt.plot(ans_X[:n], ans_Y[:n], "o", ms=1, color=RT_LINE_COLOR)
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
 
-FRAMES = 1
+FRAMES = 300
 res = FuncAnimation(fig, draw, interval=50, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要

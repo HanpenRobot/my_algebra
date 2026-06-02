@@ -70,7 +70,10 @@ double run_runge_result(double E, double x0, double y0, double z0, double w0)
         w = w + n;
 
         t = t + h;
-        fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
+        if (i < 10 || i % 100 == 0)
+        {
+            fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
+        }
     }
     return x;
 }
