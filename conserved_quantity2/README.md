@@ -28,7 +28,7 @@ u(x,y)=-\varphi(x,y) \cdots (3)
 
 
 ```math
-\dot{Q}_1=X \\
+\dot{Q}_1=X
 ```
 ```math
 \dot{X}=-Q_{1}(Q^2_1+\epsilon Q^2_2)
