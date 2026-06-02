@@ -95,8 +95,8 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    AXIS_X_MAX = 1.0
-    AXIS_Y_MAX = 1.0
+    AXIS_X_MAX = 1.5
+    AXIS_Y_MAX = 1.5
     plt.xlim(-AXIS_X_MAX, AXIS_X_MAX)
     plt.ylim(-AXIS_Y_MAX, AXIS_Y_MAX)
 
