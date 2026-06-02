@@ -68,7 +68,7 @@ df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = 1  # max(df["eq_num"].to_list())
 # FRAMES = 40  # int(max_frame_num / 5)
-FRAMES = 400
+FRAMES = 150
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
