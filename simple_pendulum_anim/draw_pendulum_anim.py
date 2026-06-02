@@ -68,7 +68,7 @@ df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 max_eq_num = 1  # max(df["eq_num"].to_list())
 # FRAMES = 40  # int(max_frame_num / 5)
-FRAMES = 120
+FRAMES = 400
 
 
 def get_data(df, pos: int, max_frame_num: int, max_eq_num: int):
@@ -95,6 +95,10 @@ def create_frame(num: int):
 
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
+    AXIS_X_MAX = 1.0
+    AXIS_Y_MAX = 1.0
+    plt.xlim(-AXIS_X_MAX, AXIS_X_MAX)
+    plt.ylim(-AXIS_Y_MAX, AXIS_Y_MAX)
 
     tmp_res = get_data(
         df=df, pos=num, max_frame_num=max_frame_num, max_eq_num=max_eq_num
@@ -113,7 +117,7 @@ def create_frame(num: int):
     x3 = y2
     y3 = -x2
     plt.plot(x3, y3, color="#FF0000")
-    x3e = x[::-1][0]
+    x3e = x3[::-1][0]
     y3e = y3[::-1][0]
     r_angle = 0.6 * r
 
@@ -131,7 +135,7 @@ def create_frame(num: int):
 
     circle_x2 = circle_y
     circle_y2 = -1.0 * circle_x
-    plt.scatter(circle_x2, circle_y2, color="gray", linestyle="-.")
+    plt.plot(circle_x2, circle_y2, color="gray", linestyle="-.")
     plt.text(
         circle_x2[0] + 0.3,
         circle_y2[0] - 0.6,
@@ -139,7 +143,7 @@ def create_frame(num: int):
         color="gray",
         fontsize=15,
     )
-    # plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
+    plt.legend(loc="upper center", borderaxespad=1, fontsize=8)
 
     buf = BytesIO()
     fig.savefig(buf)
