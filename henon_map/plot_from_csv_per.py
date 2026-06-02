@@ -69,20 +69,23 @@ def draw(n: int):
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
     plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
 
-    res_A, res_B = make_data(tmp_df=df, per=0)
+    res_A, res_B = make_data(tmp_df=df, per=1)
     plt.plot(res_A, res_B, ".", ms=1, color="#0000FF")
 
-    res_A2, res_B2 = make_data(tmp_df=df, per=1)
+    res_A2, res_B2 = make_data(tmp_df=df, per=2)
     plt.plot(res_A2, res_B2, ".", ms=1, color="#00AA00")
 
-    res_A3, res_B3 = make_data(tmp_df=df, per=4)
+    res_A3, res_B3 = make_data(tmp_df=df, per=3)
     plt.plot(res_A3, res_B3, ".", ms=1, color="#00AAAA")
 
-    res_A4, res_B4 = make_data(tmp_df=df, per=3)
+    res_A4, res_B4 = make_data(tmp_df=df, per=4)
     plt.plot(res_A4, res_B4, ".", ms=1, color="#FF0000")
 
     res_A5, res_B5 = make_data(tmp_df=df, per=-1)
     plt.plot(res_A5, res_B5, ".", ms=1, color="#000000")
+
+    res_A6, res_B6 = make_data(tmp_df=df, per=5)
+    plt.plot(res_A6, res_B6, ".", ms=1, color="#AA00AA")
 
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
 
