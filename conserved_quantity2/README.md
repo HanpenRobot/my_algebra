@@ -59,7 +59,10 @@ u(x,y)=-\varphi(x,y) \cdots (3)
 ![./plot_4dA.gif](./plot_4dA.gif)
 <!-- *Fig. 1 任意の初期値$`(x_0,y_0)`$から出発した解軌道が、$`t \to \infty`$で半径$`\sqrt{a}`$のリミットサイクルに収束していることが確認できる。また、$`(x,y)=(0,0)`$が不動点であることもわかる(しかし、$`(x,y)=(0,0)`$は不安定な不動点なので、わずかにでも0からずれるとリミットサイクルに収束する様子がアニメーションからも確認できる。)* -->
 
-![./plot_4d_poncare.gif](./plot_4d_poncare.gif)
+![./plot_4d_poncareE1.gif](./plot_4d_poncareE1.gif)
+
+
+![./plot_4d_poncareE5.gif](./plot_4d_poncareE5.gif)
 
 *Fig. 2 ポアンカレプロット*
 
