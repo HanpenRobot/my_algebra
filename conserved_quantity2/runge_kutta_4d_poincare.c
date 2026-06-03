@@ -68,10 +68,15 @@ double run_runge_result(double E, double x0, double y0, double z0, double w0)
         n4 = h * func1(E, x + k3, y + l3, z + m3, w + n3);
         n = (n1 + 2.0 * n2 + 2.0 * n3 + n4) / 6.0;
         w = w + n;
-
+        // ans_X.append(float(line[3]))
+        // ans_Y.append(float(line[2]))
         t = t + h;
-
-        fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
+        // wがQ1, zがQ2,
+        // y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
+        if (fabs(w) < 0.01) // 2,4
+        {
+            fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
+        }
     }
     return x;
 }

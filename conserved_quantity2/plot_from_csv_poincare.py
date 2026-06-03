@@ -18,10 +18,11 @@ with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f)
     num = 0
     for line in reader:
-        if num > 0 and num % 500 == 0:
-            # if num > 0:
-            ans_X.append(float(line[4]))
-            ans_Y.append(float(line[3]))
+        if num > 0:
+            ans_X.append(float(line[3]))
+            ans_Y.append(float(line[2]))
+            # wがQ1, zがQ2,
+            # y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
         num += 1
 
 
@@ -42,17 +43,17 @@ def draw(n: int):
     GRID_LINE_WIDTH = 0.8
 
     FIGURE_SIZE = (5, 5)
-    Y_AXIS_MAX = 3.5
-    Y_AXIS_MIN = -3.5
-    X_AXIS_MAX = 3.5
-    X_AXIS_MIN = -3.5
+    Y_AXIS_MAX = 6.5
+    Y_AXIS_MIN = -6.5
+    X_AXIS_MAX = 6.5
+    X_AXIS_MIN = -6.5
 
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
     plt.axes().set_aspect("equal")
     plt.cla()
-    plt.xlabel(r"$Q_1$", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(r"$Q_2$", fontsize=LABEL_FONT_SIZE, rotation=0)
+    plt.xlabel(r"$Q_2$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(r"$P_2$", fontsize=LABEL_FONT_SIZE, rotation=0)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
     # plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
