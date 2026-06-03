@@ -19,10 +19,16 @@ with open(file_name, encoding="UTF-8") as f:
     num = 0
     for line in reader:
         if num > 0:
-            ans_X.append(float(line[3]))
-            ans_Y.append(float(line[2]))
+            # // (x,w)=(\dot{Q1},Q1)は// 1,4
+            ans_X.append(float(line[4]))
+            ans_Y.append(float(line[1]))
             # wがQ1, zがQ2,
             # y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
+
+            # ans_X.append(float(line[3]))
+            # ans_Y.append(float(line[2]))
+            # # wがQ1, zがQ2,
+            # # y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
         num += 1
 
 

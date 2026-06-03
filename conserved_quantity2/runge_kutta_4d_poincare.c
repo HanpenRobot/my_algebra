@@ -73,7 +73,12 @@ double run_runge_result(double E, double x0, double y0, double z0, double w0)
         t = t + h;
         // wがQ1, zがQ2,
         // y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
-        if (fabs(w) < 0.001) // 2,4
+        // (x,w)=(\dot{Q1},Q1)は// 1,4
+        // if (fabs(w) < 0.001)
+        // {
+        //     fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
+        // }
+        if (fabs(z) < 0.001) // 1,4
         {
             fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
         }
@@ -85,7 +90,7 @@ int main(void)
 {
 
     // double E = 1.0, x0 = 3.0, y0 = 0.0, z0 = 3.0, w0 = 1.0;
-    double E = 5.0, x0 = 3.0, y0 = 0.0, z0 = 3.0, w0 = 1.0;
+    double E = 1.0, x0 = 2.0, y0 = 4.0, z0 = 1.0, w0 = 1.0;
     run_runge_result(E, x0, y0, z0, w0);
 
     return 0;
