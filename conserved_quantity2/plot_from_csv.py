@@ -6,9 +6,9 @@ from PIL import Image
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
-plt.axes().set_aspect("equal")
 FRAMES = 180
-fig = plt.figure(dpi=256)
+# fig = plt.figure(dpi=256)
+fig = plt.figure(dpi=128)
 
 ans_X = []
 ans_Y = []
@@ -41,7 +41,7 @@ def draw(n: int):
     AXIS_LINE_WIDTH = 0.8
     GRID_LINE_WIDTH = 0.8
 
-    FIGURE_SIZE = (10, 10)
+    FIGURE_SIZE = (5, 5)
     Y_AXIS_MAX = 3.5
     Y_AXIS_MIN = -3.5
     X_AXIS_MAX = 3.5
@@ -49,6 +49,7 @@ def draw(n: int):
 
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16
+    plt.axes().set_aspect("equal")
     plt.cla()
     plt.xlabel(r"$Q_1$", fontsize=LABEL_FONT_SIZE)
     plt.ylabel(r"$Q_2$", fontsize=LABEL_FONT_SIZE, rotation=0)
@@ -61,9 +62,13 @@ def draw(n: int):
 
     plt.plot(ans_X[:n], ans_Y[:n], "o", ms=1, color=RT_LINE_COLOR)
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
+    buf = BytesIO()
+    fig.savefig(buf)
+    return Image.open(buf)
 
 
 FRAMES = 300
+FRAMES = 600
 res = FuncAnimation(fig, draw, interval=50, frames=range(FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
