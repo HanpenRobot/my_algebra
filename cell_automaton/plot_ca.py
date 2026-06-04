@@ -54,11 +54,11 @@ def get_data(
     pos: int,
 ):
 
-    print(f"get_data:{pos=}")
+    # print(f"get_data:{pos=}")
 
     tmp_df2 = tmp_df[tmp_df["frame_num"] == pos]
     tmp_ret = tmp_df2["ans_list"].to_list()
-    print(f"*********{tmp_ret=}")
+    # print(f"*********{tmp_ret=}")
 
     return tmp_ret
 

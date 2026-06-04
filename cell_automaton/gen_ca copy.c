@@ -95,24 +95,20 @@ int main()
 
         U[j][7] = 1.0;
     }
-    int frame_max_num = 49;
+    int frame_max_num = 20;
     for (f_cnt = 0; f_cnt < frame_max_num; f_cnt++)
     {
         res_display(fp, frame_num, U, N);
         frame_num += 1;
         printf("f_cnt=%d", f_cnt);
-        for (int i = 1; i < N - 1; i++)
+        for (int i = 0; i < N; i++)
         {
-            int tmpA[100][100] = {0};
-            for (int ii = 0; ii < N - 1; ii++)
+            int tmpA[100] = {0};
+            for (int j = 0; j < N - 1; j++)
             {
-                for (int jj = 0; jj < N - 1; jj++)
-                {
-                    tmpA[ii][jj] = U[i][jj];
-                }
+                tmpA[j] = U[i][j];
             }
-
-            for (int j = 1; j < N - 1; j++)
+            for (int j = 0; j < N - 1; j++)
             {
 
                 if (U[i][j] == 1)
@@ -121,14 +117,14 @@ int main()
                     // U[i][j] = 0;
                     // U[i][j + 1] = 1;
                     // U[i][j] = 0;
-                    tmpA[i][j] = 0;
-                    tmpA[i][j + 1] = 1;
+                    tmpA[j] = 0;
+                    tmpA[j + 1] = 1;
                 }
             }
 
             for (int j = 0; j < N - 1; j++)
             {
-                U[i][j] = tmpA[i][j];
+                U[i][j] = tmpA[j];
             }
         }
     }
