@@ -105,7 +105,7 @@ def draw(draw_num: int):
         ans_mat2d,
         cbar=False,
         square=True,
-        # cmap="Blues",
+        cmap="Blues",
         xticklabels=False,
         yticklabels=False,
         linewidths=0.5,
