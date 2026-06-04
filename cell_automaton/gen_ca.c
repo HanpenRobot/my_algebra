@@ -55,63 +55,78 @@ double run_runge_result(FILE *fp, double K1, double K2, double a, double b, doub
     return x;
 }
 
-int main2()
+void res_display(FILE *fp, int fnum, int A[][100], int N)
 {
-    printf("AAAAAAAAAAAA\n");
-}
-int main()
-{
-    FILE *fp = fopen("ans_ca.csv", "w");
-    printf("AAAAAAAAAAAA\n");
-    int N = 50;
-    int U[100][100] = {0};
-    fprintf(fp, "n,i,j\n");
-    // int N = 100;
-    // double U[1000][1000];
-
-    for (int j = 0; j < N; j++)
-    {
-        U[j][3] = 1.0;
-    }
 
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < N; j++)
         {
             // printf("%f,%f\n", U[i][j]);
+            if (j == 0)
+            {
+                fprintf(fp, "%d,", fnum);
+            }
             if (j == N - 1)
             {
-                fprintf(fp, "%d", U[i][j]);
+                fprintf(fp, "%d", A[i][j]);
             }
             else
             {
-                fprintf(fp, "%d,", U[i][j]);
+                fprintf(fp, "%d,", A[i][j]);
             }
         }
         fprintf(fp, "\n");
     }
-    // double a = 2.0, b = 1.0, c = 1.0, d = 3.0, K1 = 6.0, K2 = 5.0;
-    // double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 5.0, K2 = 12.0;
-    // double a = 1.0, b = 3.0, c = 1.0, d = 3.0, K1 = 7.5, K2 = 5.0;
-    // (K1 / a) < (K2 / c) and (K2 / d) < (K2 / b) -> (x,y) neq (0,0)となる平衡点を持つ
-    //(6.0 / 2) < (10 / 2) and (10 / 6) < (6 / 3 )
-    // double x0 = 0.5, y0 = 0.5; // lotka_volterraの方程式の初期値
-    //  run_runge_result(fp, K1, K2, a, b, c, d, x0, y0);
+}
 
-    // int eq_num = 0;
-    // // x0 = 0.3, y0 = 0.3; // lotka_volterraの方程式の初期値
-    // for (double x0 = 0.0; x0 < 15.0; x0 += 0.5)
-    //     for (double y0 = 0.0; y0 < 15.0; y0 += 0.5)
-    //     {
-    //         {
-    //             run_runge_result(fp, K1, K2, a, b, c, d, x0, y0, eq_num);
-    //             // printf("x0=%lf,y0=%lf\n", x0, y0);
-    //             eq_num += 1;
-    //         }
-    //     }
+int main()
+{
+    FILE *fp = fopen("ans_ca.csv", "w");
+    printf("ABAAAAAAAAAAA\n");
+    int N = 50;
+    int U[100][100] = {0};
+    int frame_num = 0;
+    int f_cnt = 0;
+    fprintf(fp, "n,i,j\n");
+    for (int j = 0; j < N; j++)
+    {
+        U[j][4] = 1.0;
 
-    // x0 = 5.0, y0 = 10.0; // lotka_volterraの方程式の初期値
-    // run_runge_result(fp, K1, K2, a, b, c, d, x0, y0);
+        U[j][7] = 1.0;
+    }
+    for (f_cnt = 0; f_cnt < 4; f_cnt++)
+    {
+        res_display(fp, frame_num, U, N);
+        frame_num += 1;
+        printf("f_cnt=%d", f_cnt);
+        for (int i = 0; i < N; i++)
+        {
+            int tmpA[100] = {0};
+            for (int j = 0; j < N - 1; j++)
+            {
+                tmpA[j] = U[i][j];
+            }
+            for (int j = 0; j < N - 1; j++)
+            {
+
+                if (U[i][j] == 1)
+                {
+                    printf("f_cnt=%d, frame_num=%d,i=%d,j=%d,A=%d\n", f_cnt, frame_num, i, j, U[i][j]);
+                    // U[i][j] = 0;
+                    // U[i][j + 1] = 1;
+                    // U[i][j] = 0;
+                    tmpA[j] = 0;
+                    tmpA[j + 1] = 1;
+                }
+            }
+
+            for (int j = 0; j < N - 1; j++)
+            {
+                U[i][j] = tmpA[j];
+            }
+        }
+    }
 
     return 0;
 }

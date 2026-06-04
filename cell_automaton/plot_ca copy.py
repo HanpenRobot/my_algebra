@@ -6,7 +6,6 @@ from PIL import Image
 from matplotlib.animation import FuncAnimation
 import numpy as np
 import seaborn as sns
-import pandas as pd
 
 FRAMES = 180
 # fig = plt.figure(dpi=256)
@@ -15,10 +14,8 @@ fig = plt.figure(dpi=128)
 # ans_X = []
 # ans_Y = []
 
-results = []
-ans_eq_num = []
-# ans_mat2d = []
-frame_num = 0
+
+ans_mat2d = []
 # tmp_ans_list = []
 file_name = "./ans_ca.csv"
 with open(file_name, encoding="UTF-8") as f:
@@ -29,43 +26,25 @@ with open(file_name, encoding="UTF-8") as f:
             print(f"***{num=}, {line=}")
             tmp_ans_list = line[0].split(",")
             tmp_ans_list = [int(x) for x in tmp_ans_list]
-            ans_list = tmp_ans_list[1:]
-            frame_num = tmp_ans_list[0]
-            ans_eq_num.append(frame_num)
-            # ans_mat2d.append(ans_list)
-            results.append(
-                {
-                    "ans_list": ans_list,
-                    "frame_num": frame_num,
-                }
-            )
+            ans_mat2d.append(tmp_ans_list)
+            # // (x,w)=(\dot{Q1},Q1)は// 1,4
+            # ans_X.append(float(line[4]))
+            # ans_Y.append(float(line[1]))
+            # wがQ1, zがQ2,
+            # y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
 
+            # ans_X.append(float(line[3]))
+            # ans_Y.append(float(line[2]))
+            # # wがQ1, zがQ2,
+            # # y, z が2, 3だから3,2 は (z, y) = (Q2,\dot{Q2}) = (Q2, P2)をプロットしている
         num += 1
-# print(f"***{ans_mat2d=}")
-df = pd.DataFrame.from_dict(results, orient="columns")
-max_frame_num = max(df["frame_num"].to_list())
-print(f"*****************{df=}")
-
+print(f"***{ans_mat2d=}")
 # exit()
 
 
-def get_data(
-    tmp_df,
-    pos: int,
-):
+def draw(n: int):
 
-    print(f"get_data:{pos=}")
-
-    tmp_df2 = tmp_df[tmp_df["frame_num"] == pos]
-    tmp_ret = tmp_df2["ans_list"].to_list()
-    print(f"*********{tmp_ret=}")
-
-    return tmp_ret
-
-
-def draw(draw_num: int):
-
-    print(f"plotting {draw_num=} ...")
+    print(f"plotting {n=} ...")
     N_max = 2000
     limit_const = 0.7
     CURVE_LINE_COLOR = "#0000FF"
@@ -99,7 +78,7 @@ def draw(draw_num: int):
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
     plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
     # list_2d = [[0, 1, 0], [1, 0, 0], [0, 0, 0]]
-    ans_mat2d = get_data(tmp_df=df, pos=draw_num)
+
     # sns.heatmap(list_2d, cbar=False, square=True, cmap="Blues")
     sns.heatmap(
         ans_mat2d,
@@ -128,8 +107,8 @@ def draw(draw_num: int):
 
 
 FRAMES = 300
-FRAMES = max_frame_num
-res = FuncAnimation(fig, draw, interval=50, frames=range(0, FRAMES))
+FRAMES = 3
+res = FuncAnimation(fig, draw, interval=50, frames=range(2, FRAMES))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
 res.save(f"plot_ca.gif", writer="imagemagick")
