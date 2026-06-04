@@ -95,7 +95,8 @@ int main()
 
         U[j][7] = 1.0;
     }
-    for (f_cnt = 0; f_cnt < 4; f_cnt++)
+    int frame_max_num = 20;
+    for (f_cnt = 0; f_cnt < frame_max_num; f_cnt++)
     {
         res_display(fp, frame_num, U, N);
         frame_num += 1;
