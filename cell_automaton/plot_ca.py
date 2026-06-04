@@ -9,17 +9,12 @@ import seaborn as sns
 import pandas as pd
 
 FRAMES = 180
-# fig = plt.figure(dpi=256)
-fig = plt.figure(dpi=128)
+fig = plt.figure(dpi=256)
 
-# ans_X = []
-# ans_Y = []
 
 results = []
 ans_eq_num = []
-# ans_mat2d = []
 frame_num = 0
-# tmp_ans_list = []
 file_name = "./ans_ca.csv"
 with open(file_name, encoding="UTF-8") as f:
     reader = csv.reader(f, delimiter="\n")
@@ -32,7 +27,7 @@ with open(file_name, encoding="UTF-8") as f:
             ans_list = tmp_ans_list[1:]
             frame_num = tmp_ans_list[0]
             ans_eq_num.append(frame_num)
-            # ans_mat2d.append(ans_list)
+
             results.append(
                 {
                     "ans_list": ans_list,
@@ -41,12 +36,9 @@ with open(file_name, encoding="UTF-8") as f:
             )
 
         num += 1
-# print(f"***{ans_mat2d=}")
 df = pd.DataFrame.from_dict(results, orient="columns")
 max_frame_num = max(df["frame_num"].to_list())
 print(f"*****************{df=}")
-
-# exit()
 
 
 def get_data(
@@ -54,11 +46,8 @@ def get_data(
     pos: int,
 ):
 
-    # print(f"get_data:{pos=}")
-
     tmp_df2 = tmp_df[tmp_df["frame_num"] == pos]
     tmp_ret = tmp_df2["ans_list"].to_list()
-    # print(f"*********{tmp_ret=}")
 
     return tmp_ret
 
@@ -93,14 +82,12 @@ def draw(draw_num: int):
     plt.xlabel(r"$X$", fontsize=LABEL_FONT_SIZE)
     plt.ylabel(r"$Y$", fontsize=LABEL_FONT_SIZE, rotation=0)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
-    # plt.xticks(np.linspace(0, 4.2, 22))
     plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
     plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
     plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
-    # list_2d = [[0, 1, 0], [1, 0, 0], [0, 0, 0]]
     ans_mat2d = get_data(tmp_df=df, pos=draw_num)
-    # sns.heatmap(list_2d, cbar=False, square=True, cmap="Blues")
+
     sns.heatmap(
         ans_mat2d,
         cbar=False,
@@ -112,14 +99,7 @@ def draw(draw_num: int):
         linecolor="gray",
         # , xticklabels=1, yticklabels=1
     )
-    # sns.heatmap(df, annot=True)
-    # ansX = np.linspace(0, Y_LIM, 30)
-    # epsilon = 1.0 / n
-    # ansY = np.log(np.exp(ansX / epsilon) + np.exp((0 * ansX + 3) / epsilon)) * epsilon
-    # print(f"***{ansX=}")
-    # print(f"aa{ansY=}")
-    # x2 = np.cos(theta) * x + np.sin(theta) * y
-    # y2 = np.sin(theta) * x + np.cos(theta) * y
+
     # plt.plot(ansX, ansY, color=RT_LINE_COLOR)
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
     buf = BytesIO()
