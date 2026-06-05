@@ -9,7 +9,7 @@ import seaborn as sns
 import pandas as pd
 
 FRAMES = 180
-fig = plt.figure(dpi=256)
+fig = plt.figure(dpi=128)
 
 
 results = []
