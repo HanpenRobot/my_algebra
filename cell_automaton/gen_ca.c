@@ -53,7 +53,7 @@ int main()
     int tmpA2[100][100] = {0};
     int tmpA3[100][100] = {0};
     int tmpA4[100][100] = {0};
-    int U_history[10][100][100] = {0};
+    int U_history[30][100][100] = {0};
     fprintf(fp, "n,i,j\n");
     // for (int j = 0; j < N; j++)
     // {
@@ -69,6 +69,7 @@ int main()
     // }
     // }
     U[25][25] = 1;
+    U[3][3] = 1;
 
     for (int ii = 0; ii < 100; ii++)
     {
@@ -93,7 +94,7 @@ int main()
         }
     }
 
-    int frame_max_num = 20;
+    int frame_max_num = 30;
     for (f_cnt = 1; f_cnt < frame_max_num; f_cnt++)
     {
         res_display(fp, frame_num, U, N);
