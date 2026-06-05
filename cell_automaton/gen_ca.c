@@ -57,16 +57,16 @@ int main()
     fprintf(fp, "n,i,j\n");
     for (int j = 0; j < N; j++)
     {
-        U[j][4] = 1.0;
+        // U[j][4] = 1.0;
 
         U[j][5] = 1.0;
 
-        if (j % 2 == 0)
-        {
-            U[j][10] = 1.0;
+        // if (j % 2 == 0)
+        // {
+        //     U[j][10] = 1.0;
 
-            U[j][10] = 1.0;
-        }
+        //     U[j][10] = 1.0;
+        // }
     }
 
     for (int ii = 0; ii < 100; ii++)
@@ -117,9 +117,9 @@ int main()
             }
         }
 
-        for (int i = 1; i < N - 1; i++)
+        for (int i = 0; i < N; i++)
         {
-            for (int j = 1; j < N - 1; j++)
+            for (int j = 0; j < N; j++)
             {
                 int res_local = 0;
                 array[0] = tmpA[i][j];
