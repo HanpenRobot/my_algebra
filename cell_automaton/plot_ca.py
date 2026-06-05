@@ -76,16 +76,15 @@ def draw(draw_num: int):
     X_AXIS_MIN = 0
 
     TITLE_FONT_SIZE = 14
-    LABEL_FONT_SIZE = 16
+    LABEL_FONT_SIZE = 14
     plt.axes().set_aspect("equal")
     plt.cla()
-    plt.xlabel(r"$X$", fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(r"$Y$", fontsize=LABEL_FONT_SIZE, rotation=0)
-    plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
-    plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
-    plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
-    plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
+
+    # plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
+    # plt.axhline(0, color=X_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
+    # plt.axvline(0, color=Y_AXIS_LINE_COLOR, linewidth=LINE_WIDTH)
+    # plt.xlim(X_AXIS_MIN, X_AXIS_MAX)
+    # plt.ylim(Y_AXIS_MIN, Y_AXIS_MAX)
     ans_mat2d = get_data(tmp_df=df, pos=draw_num)
 
     sns.heatmap(
@@ -97,17 +96,23 @@ def draw(draw_num: int):
         yticklabels=False,
         linewidths=0.5,
         linecolor="gray",
-        # , xticklabels=1, yticklabels=1
     )
+    plt.title(
+        rf"$U_{{i,j,n}}=\max({{U_{{i,j,n}},U_{{({{i+1}}),j,n}},"
+        + rf"U_{{({{i-1}}),j,n}},U_{{i,({{j+1}}),n}},U_{{i,({{j-1}}),n}},"
+        + rf"U_{{i,j,({{n-1}})}}}})-U_{{i,j,({{n-1}})}}$",
+        fontsize=10,
+        loc="center",
+    )
+    plt.xlabel(r"$i$", fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(r"$j$", fontsize=LABEL_FONT_SIZE, rotation=0)
 
-    # plt.plot(ansX, ansY, color=RT_LINE_COLOR)
     # plt.legend(loc="lower center", borderaxespad=1, fontsize=10)
     buf = BytesIO()
     fig.savefig(buf)
     return Image.open(buf)
 
 
-FRAMES = 300
 FRAMES = max_frame_num
 res = FuncAnimation(fig, draw, interval=50, frames=range(0, FRAMES))
 
