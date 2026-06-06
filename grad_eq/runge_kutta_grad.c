@@ -90,7 +90,7 @@ double run_runge_result(double x0, double y0, double z0, double w0)
         w = w + n;
 
         t = t + h;
-        if (i < 10 || i % 300 == 0)
+        if (i < 10 || i % 3000 == 0)
         {
             fprintf(fp, "%f,%f,%f,%f,%f\n", t, x, y, z, w);
         }
