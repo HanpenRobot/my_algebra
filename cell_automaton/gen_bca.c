@@ -42,7 +42,10 @@ int main()
     // U[0][11] = 1;
     // U[0][13] = 1;
     // U[0][15] = 1;
-    U[0][0] = 1;
+
+    // U[0][0] = 1;
+    U[0][25] = 1;
+
     fprintf(fp, "t,j\n");
 
     for (int f_cnt = 1; f_cnt < FRAME_MAX; f_cnt++)
