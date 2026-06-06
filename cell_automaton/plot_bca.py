@@ -107,7 +107,7 @@ def draw(draw_num: int):
     #     loc="center",
     # )
     plt.title(
-        rf"Rule: 184 BCA",
+        rf"Rule: 184 CA",
         fontsize=10,
         loc="center",
     )
