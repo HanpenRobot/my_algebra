@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #define N_MAX 50
-#define FRAME_MAX 30
+#define FRAME_MAX 50
 
 void res_display(FILE *fp, int f_cnt, int A[][N_MAX], int N)
 {
@@ -34,14 +34,15 @@ int main()
     int tmpU2[N_MAX] = {0};
     int tmpU3[N_MAX] = {0};
     int frame_num = 0;
-    U[0][3] = 1;
-    U[0][4] = 1;
-    U[0][6] = 1;
-    U[0][9] = 1;
-    U[0][10] = 1;
-    U[0][11] = 1;
-    U[0][13] = 1;
-    U[0][15] = 1;
+    // U[0][3] = 1;
+    // U[0][4] = 1;
+    // U[0][6] = 1;
+    // U[0][9] = 1;
+    // U[0][10] = 1;
+    // U[0][11] = 1;
+    // U[0][13] = 1;
+    // U[0][15] = 1;
+    U[0][0] = 1;
     fprintf(fp, "t,j\n");
 
     for (int f_cnt = 1; f_cnt < FRAME_MAX; f_cnt++)
@@ -54,41 +55,43 @@ int main()
         for (int j = 1; j < N_MAX - 1; j++)
         {
 
-            if (tmpU[j - 1] == 0 && tmpU[j] == 0 && tmpU[j + 1] == 0)
-            {
-                tmpU2[j] = 0;
-            }
+            // A[i] = (A2[i - 1] + A2[i + 1]) % 2;
+            tmpU2[j] = (tmpU[j - 1] + tmpU[j + 1]) % 2;
+            // if (tmpU[j - 1] == 0 && tmpU[j] == 0 && tmpU[j + 1] == 0)
+            // {
+            //     tmpU2[j] = 0;
+            // }
 
-            if (tmpU[j - 1] == 0 && tmpU[j] == 0 && tmpU[j + 1] == 1)
-            {
-                tmpU2[j] = 0;
-            }
+            // if (tmpU[j - 1] == 0 && tmpU[j] == 0 && tmpU[j + 1] == 1)
+            // {
+            //     tmpU2[j] = 0;
+            // }
 
-            if (tmpU[j - 1] == 0 && tmpU[j] == 1 && tmpU[j + 1] == 0)
-            {
-                tmpU2[j] = 0;
-            }
+            // if (tmpU[j - 1] == 0 && tmpU[j] == 1 && tmpU[j + 1] == 0)
+            // {
+            //     tmpU2[j] = 0;
+            // }
 
-            if (tmpU[j - 1] == 0 && tmpU[j] == 1 && tmpU[j + 1] == 1)
-            {
-                tmpU2[j] = 1;
-            }
-            if (tmpU[j - 1] == 1 && tmpU[j] == 0 && tmpU[j + 1] == 0)
-            {
-                tmpU2[j] = 1;
-            }
-            if (tmpU[j - 1] == 1 && tmpU[j] == 0 && tmpU[j + 1] == 1)
-            {
-                tmpU2[j] = 1;
-            }
-            if (tmpU[j - 1] == 1 && tmpU[j] == 1 && tmpU[j + 1] == 0)
-            {
-                tmpU2[j] = 0;
-            }
-            if (tmpU[j - 1] == 1 && tmpU[j] == 1 && tmpU[j + 1] == 1)
-            {
-                tmpU2[j] = 1;
-            }
+            // if (tmpU[j - 1] == 0 && tmpU[j] == 1 && tmpU[j + 1] == 1)
+            // {
+            //     tmpU2[j] = 1;
+            // }
+            // if (tmpU[j - 1] == 1 && tmpU[j] == 0 && tmpU[j + 1] == 0)
+            // {
+            //     tmpU2[j] = 1;
+            // }
+            // if (tmpU[j - 1] == 1 && tmpU[j] == 0 && tmpU[j + 1] == 1)
+            // {
+            //     tmpU2[j] = 1;
+            // }
+            // if (tmpU[j - 1] == 1 && tmpU[j] == 1 && tmpU[j + 1] == 0)
+            // {
+            //     tmpU2[j] = 0;
+            // }
+            // if (tmpU[j - 1] == 1 && tmpU[j] == 1 && tmpU[j + 1] == 1)
+            // {
+            //     tmpU2[j] = 1;
+            // }
         }
         for (int j = 0; j < N_MAX; j++)
         {
