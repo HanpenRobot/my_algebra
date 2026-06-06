@@ -12,6 +12,7 @@ void res_display(FILE *fp, int f_cnt, int A[][N_MAX], int N)
         if (i == -1)
         {
             fprintf(fp, "%d,", f_cnt);
+            continue;
         }
         if (i == N - 1)
         {
@@ -34,7 +35,13 @@ int main()
     int tmpU3[N_MAX] = {0};
     int frame_num = 0;
     U[0][3] = 1;
-    // U[0][5] = 1;
+    U[0][4] = 1;
+    U[0][6] = 1;
+    U[0][9] = 1;
+    U[0][10] = 1;
+    U[0][11] = 1;
+    U[0][13] = 1;
+    U[0][15] = 1;
     fprintf(fp, "t,j\n");
 
     for (int f_cnt = 1; f_cnt < FRAME_MAX; f_cnt++)
@@ -89,7 +96,7 @@ int main()
             U[f_cnt][j] = tmpU2[j];
         }
 
-        res_display(fp, f_cnt, U, N_MAX);
+        res_display(fp, f_cnt - 1, U, N_MAX);
     }
 
     return 0;

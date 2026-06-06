@@ -106,6 +106,11 @@ def draw(draw_num: int):
     #     fontsize=10,
     #     loc="center",
     # )
+    plt.title(
+        rf"Rule: 184 BCA",
+        fontsize=10,
+        loc="center",
+    )
     plt.xlabel(r"$j$", fontsize=LABEL_FONT_SIZE)
     plt.ylabel(r"$t$", fontsize=LABEL_FONT_SIZE, rotation=0)
 
