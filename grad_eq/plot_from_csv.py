@@ -20,8 +20,10 @@ with open(file_name, encoding="UTF-8") as f:
     for line in reader:
         if num > 0:
             # if num > 0:
+            # ans_X.append(float(line[2]))
+            # ans_Y.append(float(line[4]))
             ans_X.append(float(line[1]))
-            ans_Y.append(float(line[2]))
+            ans_Y.append(float(line[3]))
         num += 1
 
 
@@ -42,10 +44,12 @@ def draw(n: int):
     GRID_LINE_WIDTH = 0.8
 
     FIGURE_SIZE = (5, 5)
-    Y_AXIS_MAX = 3.5
-    Y_AXIS_MIN = -3.5
-    X_AXIS_MAX = 3.5
-    X_AXIS_MIN = -3.5
+    X_LIM = 80
+    Y_LIM = 80
+    Y_AXIS_MAX = X_LIM
+    Y_AXIS_MIN = -X_LIM
+    X_AXIS_MAX = Y_LIM
+    X_AXIS_MIN = -Y_LIM
 
     TITLE_FONT_SIZE = 14
     LABEL_FONT_SIZE = 16

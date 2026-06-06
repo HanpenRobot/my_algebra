@@ -4,24 +4,26 @@
 
 double func1(double x, double y, double z, double w)
 {
-    return z;
+    return w;
 }
 
 double func2(double x, double y, double z, double w)
 {
-    return w;
+    double r = sqrt(pow(x, 2) + pow(y, 2));
+    return -x / pow(r, 3);
 }
 
 double func3(double x, double y, double z, double w)
 {
-    double r = sqrt(pow(x, 2) + pow(y, 2));
-    return -x / r;
+    return z;
 }
 
 double func4(double x, double y, double z, double w)
 {
     double r = sqrt(pow(x, 2) + pow(y, 2));
-    return -y / r;
+    double res = -y / pow(r, 3);
+    // printf("res=%f \n", res);
+    return res;
 }
 
 // double func3(double E, double x, double y, double z, double w)
@@ -61,24 +63,24 @@ double run_runge_result(double x0, double y0, double z0, double w0)
     fprintf(fp, "t,x,y,z,w\n");
     for (i = 1; i < max_step; i++)
     {
-        k1 = h * func1(x, y, z, w);
-        k2 = h * func1(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
-        k3 = h * func1(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
-        k4 = h * func1(x + k3, y + l3, z + m3, w + n3);
+        k1 = h * func3(x, y, z, w);
+        k2 = h * func3(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
+        k3 = h * func3(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
+        k4 = h * func3(x + k3, y + l3, z + m3, w + n3);
         k = (k1 + 2.0 * k2 + 2.0 * k3 + k4) / 6.0;
         x = x + k;
 
-        l1 = h * func2(x, y, z, w);
-        l2 = h * func2(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
-        l3 = h * func2(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
-        l4 = h * func2(x + k3, y + l3, z + m3, w + n3);
+        l1 = h * func1(x, y, z, w);
+        l2 = h * func1(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
+        l3 = h * func1(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
+        l4 = h * func1(x + k3, y + l3, z + m3, w + n3);
         l = (l1 + 2.0 * l2 + 2.0 * l3 + l4) / 6.0;
         y = y + l;
 
-        m1 = h * func3(x, y, z, w);
-        m2 = h * func3(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
-        m3 = h * func3(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
-        m4 = h * func3(x + k3, y + l3, z + m3, w + n3);
+        m1 = h * func2(x, y, z, w);
+        m2 = h * func2(x + k1 / 2.0, y + l1 / 2.0, z + m1 / 2.0, w + n1 / 2.0);
+        m3 = h * func2(x + k2 / 2.0, y + l2 / 2.0, z + m2 / 2.0, w + n2 / 2.0);
+        m4 = h * func2(x + k3, y + l3, z + m3, w + n3);
         m = (m1 + 2.0 * m2 + 2.0 * m3 + m4) / 6.0;
         z = z + m;
 
@@ -101,7 +103,7 @@ double run_runge_result(double x0, double y0, double z0, double w0)
 int main(void)
 {
 
-    double x0 = -12.0, y0 = 22.0, z0 = 2.8, w0 = 10.3;
+    double x0 = -3.0, y0 = 52.0, z0 = 0.8, w0 = 10.3;
     run_runge_result(x0, y0, z0, w0);
 
     return 0;
