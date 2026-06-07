@@ -1,0 +1,64 @@
+# ケプラー方程式の解のプロット: WIP
+
++ ケプラー方程式をプロットするプログラムは[./runge_kutta_kepler.c](./runge_kutta_kepler.c)である。
+
+<!-- ```math
+\frac{dx}{dt}=y \cdots (1)
+```
+
+```math
+\frac{dy}{dt}2y-x+u(x,y) \cdots (2)
+```
+
+```math
+u(x,y)=-\varphi(x,y) \cdots (3)
+```
+
+```math
+\varphi(x,y) \cdots (4)
+``` -->
+
+<!-- ```math
+\ddot{Q}_{1}=-Q_{1}(Q^2_1+\epsilon Q^2_2)
+```
+```math
+\ddot{Q}_{2}=-Q_{2}(Q^2_2+\epsilon Q^2_1)
+```
+
+
+```math
+\dot{Q}_1=X
+```
+```math
+\dot{X}=-Q_{1}(Q^2_1+\epsilon Q^2_2)
+```
+
+```math
+\dot{Q}_2=Y
+```
+```math
+\dot{Y}=-Q_{2}(Q^2_2+\epsilon Q^2_1)
+``` -->
+
+
+<!-- ```math
+\dot{W}=X
+```
+```math
+\dot{X}=-W(W^2+\epsilon Z^2)
+```
+
+```math
+\dot{Z}=Y
+```
+```math
+\dot{Y}=-Z(Z^2+\epsilon W^2)
+``` -->
+
+![./plot_grad.gif](./plot_grad.gif)
+
+![./plot_grad_anim.gif](./plot_grad_anim.gif)
+
+
+- 参考文献[1]  力学の解ける問題と解けない問題 岩波講座 物理の世界 吉田春夫 岩波書店 2005年 第1刷発行 , pp. 41-42
+
