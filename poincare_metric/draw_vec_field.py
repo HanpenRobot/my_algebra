@@ -50,10 +50,11 @@ def draw(t: int):
     tmp_L = complex(-np.sin(theta), np.cos(theta))
     X = np.linspace(-L, L, 2 * L + 1)
     Y = np.linspace(-L, L, 2 * L + 1)
+    origin_pos = complex(0.0, 0.0)
 
     plt.quiver(
-        0,
-        0,
+        origin_pos.real,
+        origin_pos.imag,
         tmp_M.real,
         tmp_M.imag,
         color="#FF0000",
@@ -62,8 +63,8 @@ def draw(t: int):
         scale=1,
     )
     plt.quiver(
-        0,
-        0,
+        origin_pos.real,
+        origin_pos.imag,
         tmp_L.real,
         tmp_L.imag,
         color="#FF0000",
@@ -74,8 +75,8 @@ def draw(t: int):
     tmp_M2 = tmp_M**2
     tmp_L2 = tmp_L**2
     plt.quiver(
-        0,
-        0,
+        origin_pos.real,
+        origin_pos.imag,
         tmp_M2.real,
         tmp_M2.imag,
         color="#0000FF",
@@ -84,8 +85,8 @@ def draw(t: int):
         scale=1,
     )
     plt.quiver(
-        0,
-        0,
+        origin_pos.real,
+        origin_pos.imag,
         tmp_L2.real,
         tmp_L2.imag,
         color="#0000FF",
@@ -105,4 +106,4 @@ N = 20
 res = FuncAnimation(fig, draw, interval=100, frames=range(N))
 
 # http://www.imagemagick.org/script/download.php#windowsのインストールが必要
-res.save("conformal.gif", writer="imagemagick")
+res.save("conformal002.gif", writer="imagemagick")
