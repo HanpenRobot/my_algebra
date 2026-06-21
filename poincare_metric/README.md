@@ -18,3 +18,7 @@ $`D=\mathbb{C}, \varphi(z)=z^2`$とする。$`\varphi`$で実軸の正の部分$
 
 ![./conformal002.gif](./conformal002.gif)
 👆️スカラー倍は共形写像である
+
+
+![./conformal003.gif](./conformal003.gif)
+👆️$`1/z`$は共形写像である

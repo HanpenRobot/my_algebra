@@ -31,7 +31,9 @@ def complex_func(z: complex):
 def draw(t: int):
     print(f"plotting {t=} ...")
     plt.cla()
-    plt.title(f"$f(z)=z^2$", fontsize=TITLE_FONT_SIZE)
+    # plt.title(f"$f(z)=z^2$", fontsize=TITLE_FONT_SIZE)
+    plt.title(rf"$f(z)=0.5*z$", fontsize=TITLE_FONT_SIZE)
+    # plt.title(rf"$f(z)=\frac{{1}}{{z}}$", fontsize=TITLE_FONT_SIZE)
     plt.xlabel(f"$\Re w$", fontsize=LABEL_FONT_SIZE)
     plt.ylabel(f"$\Im w$", fontsize=LABEL_FONT_SIZE)
     plt.grid(which="both", color=GRID_COLOR, linestyle="--", linewidth=GRID_LINE_WIDTH)
@@ -76,6 +78,8 @@ def draw(t: int):
     # tmp_L2 = tmp_L**2
     tmp_M2 = 0.5 * tmp_M
     tmp_L2 = 0.5 * tmp_L
+    # tmp_M2 = 1.0 / tmp_M
+    # tmp_L2 = 1.0 / tmp_L
     plt.quiver(
         origin_pos.real,
         origin_pos.imag,
