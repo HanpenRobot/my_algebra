@@ -13,4 +13,8 @@ $`D=\mathbb{C}, \varphi(z)=z^2`$とする。$`\varphi`$で実軸の正の部分$
 これは、$`O`$での$`\varphi`$の微分が0になるためである。
 
 ![./conformal001.gif](./conformal001.gif)
+👆️$`z^2`$は原点$`O=(0,0)`$で共形的ではない。
 
+
+![./conformal002.gif](./conformal002.gif)
+👆️スカラー倍は共形写像である

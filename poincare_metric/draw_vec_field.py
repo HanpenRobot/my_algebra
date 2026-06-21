@@ -72,8 +72,10 @@ def draw(t: int):
         scale_units="xy",
         scale=1,
     )
-    tmp_M2 = tmp_M**2
-    tmp_L2 = tmp_L**2
+    # tmp_M2 = tmp_M**2
+    # tmp_L2 = tmp_L**2
+    tmp_M2 = 0.5 * tmp_M
+    tmp_L2 = 0.5 * tmp_L
     plt.quiver(
         origin_pos.real,
         origin_pos.imag,
