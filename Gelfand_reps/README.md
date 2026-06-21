@@ -30,7 +30,7 @@ Lx=0
 M\circ L=M(Lx)
 ```
 
-$`M(Lx)`$は線形写像$`M,L \in A=Hom(X,X)`$の合成写像を意味する。すると$A=Hom(X,X)`$は環とみなすことができる。
+$`M(Lx)`$は線形写像$`M,L \in A=Hom(X,X)`$の合成写像を意味する。すると$`A=Hom(X,X)`$は環とみなすことができる。
 ```math
 J_{L}={M\circ L; M \in A=Hom(X,X)}
 ```
